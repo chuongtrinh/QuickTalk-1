@@ -1,14 +1,29 @@
 <link rel="stylesheet" href="Foundation/css/foundation.css" />
 <link rel="stylesheet" href="chat.css" />
 
+<script src="jquery-2.1.0.min.js"></script>
 
 <div id="base">
-
 	<div id="topbar" class="row">
 		<div id="username" class="large-10 columns topbar">Name</div>
 		<div id="minimize-button" class="large-1 columns topbar">_</div>
 		<div id="close-button" class="large-1 columns topbar">X</div>
 	</div>
+	
+	<!-- Minimze and Maximize -->
+	<script>
+		$("#minimize-button").css('position', 'relative').click(function(){
+			if($("#base").css('bottom') == '-460px') {
+				$("#base").animate({'bottom': '0px'}, 1000);
+				$("#text-input").show("slow");
+			}
+			else {
+				$("#base").animate({'bottom': '-460px'}, 1000);
+				$("#text-input").hide("slow");
+				
+			}
+		});
+	</script>
 	
 	<div id="options-bar" class="row">
 		<div class="large-9 columns options"> </div>
@@ -23,5 +38,4 @@
 		</div>
 		<div id="send" class="large-3 columns">Send</div>
 	</div>
-	
 </div>
