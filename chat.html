@@ -4,38 +4,76 @@
 <script src="jquery-2.1.0.min.js"></script>
 
 <div id="base">
-	<div id="topbar" class="row">
-		<div id="username" class="large-10 columns topbar">Name</div>
-		<div id="minimize-button" class="large-1 columns topbar">_</div>
-		<div id="close-button" class="large-1 columns topbar">X</div>
+	<div class="row">
+		<div class="large-12 columns">
+			<div class="row">
+				<nav class="top-bar modified data-topbar">
+			  		<ul class="title-area">
+						<li class="name">
+							<h1><a href="#">Name</a></h1>
+						</li>
+					</ul>
+					<ul class="right">
+						<li class="name">
+							<h1><a href="#">X</a></h1>
+						</li>
+					</ul>
+					<ul id="min-button" class="right">
+						<li class="name">
+							<h1><a href="#">_</a></h1>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
 	</div>
 	
 	<!-- Minimze and Maximize -->
 	<script>
-		$("#minimize-button").css('position', 'relative').click(function(){
-			if($("#base").css('bottom') == '-460px') {
+		$("#min-button").css('position', 'relative').click(function(){
+			if($("#base").css('bottom') == '-450px') {
 				$("#base").animate({'bottom': '0px'}, 1000);
 				$("#text-input").show("slow");
 			}
 			else {
-				$("#base").animate({'bottom': '-460px'}, 1000);
+				$("#base").animate({'bottom': '-450px'}, 1000);
 				$("#text-input").hide("slow");
 				
 			}
 		});
 	</script>
 	
-	<div id="options-bar" class="row">
-		<div class="large-9 columns options"> </div>
-		<div class="large-1 columns options">a</div>
-		<div class="large-1 columns options">b</div>
-		<div class="large-1 columns options">c</div>
+	<div class="row">
+		<div class="small-12 columns">
+			<ul class="button-group">
+				<div class="row">
+					<li><a href="" class="button">a</a></li>
+					<li><a href="" class="button">A</a></li>
+					<li><a href="" class="button">B</a></li>
+					<li><a href="" class="button">C</a></li>
+				</div>
+			</ul>
+		</div>
 	</div>
 	
-	<div id="text-input" class="row">
-		<div class="large-9 columns">
-			<textarea id="textbox" placeholder="Type message here!"></textarea>
-		</div>
-		<div id="send" class="large-3 columns">Send</div>
+	<div class="panel">
+		<p>all the chat content will go in here</p>
+		<p>need to determine the height</p>
+		<p>and need to stick the text input to the bottom</p>
+		<p>and the option buttons need to fill the width</p>
+		<p>more</p>
 	</div>
+	
+	<form>
+		<div class="row">
+			<div class="large-12 columns">
+					<div class="row">
+						<div class="large-9 columns">
+							<textarea id="textbox" placeholder="Type message here!"></textarea>
+						</div>
+						<div class="large-3 columns button">Send</div>
+					</div>
+			</div>
+		</div>
+	</form>
 </div>

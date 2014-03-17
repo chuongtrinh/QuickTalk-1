@@ -4,18 +4,18 @@ body {
 
 .topbar {
 	/* border-radius */
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
+	/* -webkit-border-radius: 5px; */
+	/* -moz-border-radius: 5px; */
 	border-radius: 5px;
 	/* box-shadow */
-	-webkit-box-shadow: rgba(0,0,0,0.2) 0px 1px 3px;
-	-moz-box-shadow: rgba(0,0,0,0.2) 0px 1px 3px;
+	/* -webkit-box-shadow: rgba(0,0,0,0.2) 0px 1px 3px; */
+	/* -moz-box-shadow: rgba(0,0,0,0.2) 0px 1px 3px; */
 	box-shadow: rgba(0,0,0,0.2) 0px 1px 3px;
 }
 
 #base {
 	background: #ffffff;
-	width: 300px;
+	width: 350px;
 	height: 500px;
 	position: fixed;
 	bottom: 0px;
@@ -32,41 +32,41 @@ body {
 	box-shadow: rgba(0,0,0,0.2) 0px 1px 3px;
 }
 
-#username {
+/* #username {
 	background: #c0c0c0;
 	padding: 5px;
-}
+} */
 
-#minimize-button {
+/* #minimize-button {
 	background: #c0c0c0;
 	padding: 5px;
 	text-align: center;
 	padding: 5px;
-}
+} */
 
-#btn-minimize {
+/* #btn-minimize {
 	width: inherit;
 	height: inherit;
-}
+} */
 
-#close-button {
+/* #close-button {
 	background: #c0c0c0;
 	padding: 5px;
 	text-align: center;
 	padding: 5px;
-}
+} */
 
 .options {
 	background: #c0c0cf;
 	padding: 5px;
 	
 	/* border-radius */
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
+	/* -webkit-border-radius: 5px;
+	-moz-border-radius: 5px; */
 	border-radius: 5px;
 	/* box-shadow */
-	-webkit-box-shadow: rgba(0,0,0,0.2) 0px 1px 3px;
-	-moz-box-shadow: rgba(0,0,0,0.2) 0px 1px 3px;
+/* 	-webkit-box-shadow: rgba(0,0,0,0.2) 0px 1px 3px;
+	-moz-box-shadow: rgba(0,0,0,0.2) 0px 1px 3px; */
 	box-shadow: rgba(0,0,0,0.2) 0px 1px 3px;
 }
 
