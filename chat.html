@@ -46,22 +46,22 @@
 		<div class="row">
 			<div class="large-12 columns">
 				<div id="panel">
-
+					<div id ="chatbox" style="overflow-y: scroll; height:200px;">
+						<p>Text goes here </p>
+					</div>
 				</div>
 			</div>
 		</div>
-		<form>
-			<div class="row">
-				<div class="large-12 columns">
-						<div class="row">
-							<div class="large-9 columns">
-								<textarea id="textbox" placeholder="Type message here!"></textarea>
-							</div>
-							<div class="large-3 columns button">Send</div>
+		<div class="row">
+			<div class="large-12 columns">
+					<div class="row">
+						<div class="large-9 columns">
+							<textarea id="textbox" placeholder="Type message here!"></textarea>
 						</div>
-				</div>
+						<div class="large-3 columns button" onclick="writeLogMsg()">Send</div>
+					</div>
 			</div>
-		</form>
+		</div>
 	</div>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js" type="text/javascript"/>
 	<script src="Foundation/js/foundation.min.js" type="text/javascript"/>
@@ -83,15 +83,20 @@
 	</script>
 	<script type="text/javascript">
 	
-	var file_log;
-	var username;
-	var room;
-	function getLogFile() {
+	/* Info provided by others */
+	var max_player = 5;
+	var user_name = "ctrinh";
+	var room = "poker";
+	var display_name="chuong trinh";
+	
+	/* ------------------------ */
+	/*
+	function getLogMsg() {
 		$.ajax({
 			url:"chat_log.php",
 			//dataType: 'json',
 			type:"POST",
-			data: {mode: "check", name: "chuong", room: "poker"},
+			data: {mode: "check", user_name: "ctrinh", display_name:"chuong trinh", room: "poker"},
 			cache:false,
 			success: function(response) {
 				console.log("Successfully!!!");
@@ -100,43 +105,71 @@
 						$('#panel').html(file_log);
 			}
 		});
-	}
-	function writeLogMsg(msg) {
+	}*/
+	function writeLogMsg() {
+		console.log("\nMessage is being sent: "+ $('#textbox').val());
 		$.ajax({
 			url:"chat_log.php",
+			dataType:'json',
 			type:"POST",
-			data: {mode: "public", name: "chuong", room: "poker", text: "hello !!!!"},
+			data: {mode: "write_msg", user_name: user_name, display_name:display_name, room: room, text: $('#textbox').val()},
 			cache:false,
-			success: function() {
+			success: function(response_json) {
+				if (response_json['response'].error == true) {
+					$("#chatbox").html("Error: " + response_json['response'].message);
+					console.log("Error: " + response_json['response'].message);
+				} else {
+					console.log('successfully posting messages');
+				}
 			}			
 		});
 	}
 	function getLogMsg() {
 		var oldscrollHeight = $("#chatbox").attr("scrollHeight") - 20;
-		if (file_log) {
 			$.ajax({
-				url:file_log,
+				url:"chat_log.php",
 				cache:false,
-				success: function(html) {
-					$("#chatbox").html(html);
-					var newscrollHeight = $("#chatbox").attr("scrollHeight") - 20;
-					
-					if(newscrollHeight > oldscrollHeight){
-						$("#chatbox").animate({ scrollTop: newscrollHeight }, 'normal');
-					}               
+				dataType: 'json',
+				type:"POST",
+				data: {mode: "get_msg", user_name: user_name, display_name:display_name, room: room},
+				success: function(response_json) {
+
+					if (response_json['response'].error == false) {
+						//console.log("Successfully " + response_json);
+						//console.log("\n results: "+ response_json['data']);
+						results = response_json;
+						//console.log("reponse: "+results['response']);
+						var len = results['data'].length;
+						var chat_name;	// either display_name (if available) or user_name (if display_name not exists)
+						var message_log = "<b><i>Welcome to " + room + " game</b></i>\n";
+						for (var i=0; i < len; i++) {
+							if (!results['data'][i].display_name || results['data'][i].display_name.length ===0) {
+								chat_name = results['data'][i].user_name;
+							} else {
+								chat_name = results['data'][i].display_name;
+							}
+							var color = "chat_style"+((chat_name.charCodeAt(0) * chat_name.length) % max_player);
+							message_log += "<div class='msg " + color + "'><b>" + chat_name + "</b>" +"<i> (" + results['data'][i].msg_time + ")</i>" 
+											+ ": <p>" + results['data'][i].message + "</p></div>";
+						}
+						console.log(message_log);
+						$("#chatbox").html(message_log);
+						var newscrollHeight = $("#chatbox").attr("scrollHeight") - 20;
+	
+						if(newscrollHeight > oldscrollHeight){
+							$("#chatbox").animate({ scrollTop: newscrollHeight }, 'normal');
+						}   
+					} else {
+						$("#chatbox").html("Server is temporarily down!");
+					}
 				}		
 			});
-		} else {
-			$("#chatbox").html("Server down!");
-		}
 	}
 	$(document).ready(function() {
-		getLogFile();
-
-		/*
 		var check_msg = setInterval(function() {
 			getLogMsg();
-		},2000);*/
+			console.log("loading msg\n");
+		},4000);
 	});
 	</script>
 
