@@ -62,5 +62,19 @@
 	
 </div> <!-- End Grid -->
 
+<!-- Minimze and Maximize-->
+<script>
+		$("#minus").css('position', 'relative').click(function(){
+			if($("#base").css('bottom') == '-450px') {
+				$("#base").animate({'bottom': '0px'}, 1000);
+				$("#text-input").show("slow");
+			}
+			else {
+				$("#base").animate({'bottom': '-450px'}, 1000);
+				$("#text-input").hide("slow");			
+			}
+		});
+</script>
+
 </body>
 </html>
