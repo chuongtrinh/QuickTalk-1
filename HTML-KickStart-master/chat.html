@@ -16,12 +16,15 @@
 	<!-- Javascript -->
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script type="text/javascript" src="js/kickstart.js"></script>
+
+	
 </head>
 <body>
+
 <div id="base" class="grid">
 	
 	<div class="col_12 blue">  Name
-	<button id="close" class="small"><i a href="#close" class="icon-remove-sign icon-2x"></i></button>
+	<button id="close" class="small" onClick="window.close()"><i class="icon-remove-sign icon-2x"></i></button>
 	<button id="minus" class="small"><i class="icon-minus-sign icon-2x"></i></button>
 
 	</div>
@@ -31,7 +34,7 @@
 	<!-- Button Bar w/icons -->
 	<ul id="format" class="button-bar ">
 	<li><a href=""><i class="icon-font"></i> Font</a></li>
-	<li><a href=""><i class="icon-bold"></i> </a></li>
+	<li><a href="#"><i id="bold" class="icon-bold" ></i> </a></li>
 	<li><a href=""><i class="icon-italic"></i> </a></li>
 	<li><a href=""><i class="icon-underline"></i> </a></li>
 	</ul>
@@ -62,7 +65,7 @@
 	
 </div> <!-- End Grid -->
 
-<!-- Minimze and Maximize-->
+<!-- Minimze -->
 <script>
 		$("#minus").css('position', 'relative').click(function(){
 			if($("#base").css('bottom') == '-450px') {
@@ -75,6 +78,81 @@
 			}
 		});
 </script>
+
+<script>
+$("color_block").click( function() { 
+var color = $( this ).css( "background-color" );
+var font_weight = $( "#text2" ).css( "font-weight" );
+ $( "#result" ).html( "That div is <span style='color:" +
+    color + ";'>" + color + font_weight + "</span>." )
+return false; 
+} );
+</script>
+
+
+<script>
+$( "#bold" ).hover(
+  function() {
+    $( "#bold").css({
+      "-webkit-animation": "pulsate 1.2s linear infinite",
+	  "animation" : "pulsate 1.2s linear infinite"
+    });
+  }, 
+  function() {
+    $( "#bold").css({
+      "-webkit-animation": "",
+	  "animation" : ""
+    });
+  }
+);
+ 
+</script>
+
+<script>
+var boldClicked = false;
+
+$( "#bold" )
+  .on( "mouseenter", function() {
+    $( "#text2").css({
+      "font-weight": "bold"
+    });
+  })
+  .on( "mouseleave", function() {
+  if (!boldClicked)
+    {
+		var styles = {
+		fontWeight: ""
+		};
+		$( "#text2" ).css( styles ); 
+	}
+  })
+    .on( "click", function() {
+	var font_weight = $( "#text2" ).css( "font-weight");
+	if( !boldClicked)	
+	{
+		var styles = {
+		  fontWeight: "bold"
+		};
+		$( "#text2" ).css( styles );
+		boldClicked = true; 
+		return false;
+	}
+	else
+	{
+	var styles = {
+		fontWeight: ""
+		};
+		$( "#text2" ).css( styles ); 
+		boldClicked = false;
+	}
+  });
+</script>
+
+<!--   <span style="font-weight: bold;">qeqweqeqweqweqweqweq</span>    
+<span style="font-family: 'lucida console', sans-serif;" id="yui_3_13_0_8_1396552789961_32">sdfsdfsdsfsdfs</span>
+<span style="font-style: italic;" id="yui_3_13_0_8_1396552789961_34">dfsdfsfdsfsfsfds</span>
+<span style="font-style: italic;" id="yui_3_13_0_8_1396552789961_34">dfsdfsfdsfsfsfds</span>
+-->
 
 </body>
 </html>
