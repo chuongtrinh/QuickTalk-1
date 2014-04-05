@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<html>
+<head>
+	<!-- META -->
+	<title>HTML KickStart Elements</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta name="description" content="" />
+	
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="css/kickstart.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="style.css" media="all" /> 
+	
+
+	
+	<!-- Javascript -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/kickstart.js"></script>
+
+	
+</head>
+<body>
+
+<div id="base" class="grid" style="width: 30%">
+	
+	<div class="col_12 top-bar">
+		<label id="topbar-name" for="textarea"><b>UserName</b></label>
+		<button id="close" class="small" onClick="window.close()"><i class="icon-remove-sign icon-2x"></i></button>
+		<button id="minus" class="small"><i class="icon-minus-sign icon-2x"></i></button>
+
+	</div>
+	<ul class="tabs center">
+		<li><a href="#tabc1"><h5>Contacts</h5></a></li>
+		<li><a href="#tabc2"><h5><i class="icon-comments-alt"></i>Message<span class="notification"><i class="icon-exclamation-sign"></i></span></h5></a></li>
+	</ul>
+	<div id="tabc1" class="tab-content">
+			<b>list of user</b>
+	</div>
+	
+	<div id="tabc2" class="tab-content">
+
+		<!-- Button Bar w/icons -->
+		<div class="col_4">
+			 <b>Welcome to poker game!</p>
+		</div>
+		<div class="col_8">
+			<ul id="format" class="button-bar ">
+			<li><a href=""><i class="icon-font"></i> Font</a></li>
+			<li><a href="#"><i id="bold" class="icon-bold" ></i> </a></li>
+			<li><a href=""><i class="icon-italic"></i> </a></li>
+			<li><a href=""><i class="icon-underline"></i> </a></li>
+			</ul>
+		</div> 
+
+		<div class="col_12" style="margin-top:0px; padding:0px">
+			<div id="chatbox" >chatbox</div>
+		</div>
+		<div class="col_10">
+		<!-- Placeholder Text -->
+			<textarea id="textbox" type="text" ></textarea>
+		</div>
+		<div class="col_2">
+			<button class="blue" type="submit" onclick="writeLogMsg();">Send
+				<!--<img src="css/img/emoji.png" width="50" height="50" alt="submit" />-->
+			</button>
+		</div> 
+	</div>
+	
+</div> <!-- End Grid -->
+
+<!-- Minimze -->
+<script>
+		$("#minus").css('position', 'relative').click(function(){
+			if($("#base").css('bottom') == '-450px') {
+				$("#base").animate({'bottom': '0px'}, 1000);
+				$("#text-input").show("slow");
+			}
+			else {
+				$("#base").animate({'bottom': '-450px'}, 1000);
+				$("#text-input").hide("slow");			
+			}
+		});
+</script>
+
+<script>
+$("color_block").click( function() { 
+var color = $( this ).css( "background-color" );
+var font_weight = $( "#textbox" ).css( "font-weight" );
+ $( "#result" ).html( "That div is <span style='color:" +
+    color + ";'>" + color + font_weight + "</span>." )
+return false; 
+} );
+</script>
+
+
+<script>
+$( "#bold" ).hover(
+  function() {
+    $( "#bold").css({
+      "-webkit-animation": "pulsate 1.2s linear infinite",
+	  "animation" : "pulsate 1.2s linear infinite"
+    });
+  }, 
+  function() {
+    $( "#bold").css({
+      "-webkit-animation": "",
+	  "animation" : ""
+    });
+  }
+);
+ 
+</script>
+
+<script>
+var boldClicked = false;
+
+$( "#bold" )
+  .on( "mouseenter", function() {
+    $( "#textbox").css({
+      "font-weight": "bold"
+    });
+  })
+  .on( "mouseleave", function() {
+  if (!boldClicked)
+    {
+		var styles = {
+		fontWeight: ""
+		};
+		$( "#textbox" ).css( styles ); 
+	}
+  })
+    .on( "click", function() {
+	var font_weight = $( "#textbox" ).css( "font-weight");
+	if( !boldClicked)	
+	{
+		var styles = {
+		  fontWeight: "bold"
+		};
+		$( "#textbox" ).css( styles );
+		boldClicked = true; 
+		return false;
+	}
+	else
+	{
+	var styles = {
+		fontWeight: ""
+		};
+		$( "#textbox" ).css( styles ); 
+		boldClicked = false;
+	}
+  });
+</script>
+	<script type="text/javascript">
+		
+		/* Info provided by others */
+		var max_player = 5;
+		var user_name = "ctrinh";
+		var room = "poker";
+		var display_name="chuong trinh";
+		
+		/* ------------------------ */
+		/*
+			function getLogMsg() {
+			$.ajax({
+			url:"chat_log.php",
+			//dataType: 'json',
+			type:"POST",
+			data: {mode: "check", user_name: "ctrinh", display_name:"chuong trinh", room: "poker"},
+			cache:false,
+			success: function(response) {
+			console.log("Successfully!!!");
+			file_log = response.file;
+			console.log("response: "+response.file);
+			$('#panel').html(file_log);
+			}
+			});
+		}*/
+		function writeLogMsg() {
+			console.log("\nMessage is being sent: "+ $('#textbox').val());
+			$.ajax({
+				url:"chat_log.php",
+				dataType:'json',
+				type:"POST",
+				data: {mode: "write_msg", user_name: user_name, display_name:display_name, room: room, text: $('#textbox').val()},
+				cache:false,
+				success: function(response_json) {
+					if (response_json['response'].error == true) {
+						$("#chatbox").html("Error: " + response_json['response'].message);
+						console.log("Error: " + response_json['response'].message);
+					} else {
+						console.log('successfully posting messages');
+					}
+				}			
+			});
+		}
+		function getLogMsg() {
+			var oldscrollHeight = $("#chatbox").attr("scrollHeight") - 20;
+			$.ajax({
+				url:"chat_log.php",
+				cache:false,
+				dataType: 'json',
+				type:"POST",
+				data: {mode: "get_msg", user_name: user_name, display_name:display_name, room: room},
+				success: function(response_json) {
+					
+					if (response_json['response'].error == false) {
+						//console.log("Successfully " + response_json);
+						//console.log("\n results: "+ response_json['data']);
+						results = response_json;
+						//console.log("reponse: "+results['response']);
+						var len = results['data'].length;
+						var chat_name;	// either display_name (if available) or user_name (if display_name not exists)
+						var message_log = "<b><i>Welcome to " + room + " game</b></i>\n";
+						for (var i=0; i < len; i++) {
+							if (!results['data'][i].display_name || results['data'][i].display_name.length ===0) {
+								chat_name = results['data'][i].user_name;
+							} else {
+								chat_name = results['data'][i].display_name;
+							}
+							var color = "chat_style"+((chat_name.charCodeAt(0) * chat_name.length) % max_player);
+							message_log += "<div class='mess msg " + color + "' style=\'text-align:left;\'><b>" + chat_name + "</b>" +"<span class='time'>" + results['data'][i].msg_time + "</span>:" 
+							+ "<p  style='display:inline'>" + results['data'][i].message + "</p></div>";
+						}
+						//console.log(message_log);
+						if ($('#chatbox').html().length != message_log.length) {
+							console.log($('#chatbox').html());
+							console.log("\n--------\n"+ message_log);
+							$("#chatbox").html(message_log);
+							var newscrollHeight = $("#chatbox").attr("scrollHeight") - 20;
+						
+							if(newscrollHeight > oldscrollHeight){
+								$("#chatbox").animate({ scrollTop: newscrollHeight }, 'normal');
+							}
+							console.log("loading msg\n");
+						}   else {
+						console.log("not loading msg\n");
+						}
+					} else {
+						$("#chatbox").html("Server is temporarily down!");
+					}
+				}		
+			});
+		}
+		$(document).ready(function() {
+			var check_msg = setInterval(function() {
+				getLogMsg();
+
+			},4000);
+		});
+	</script>
+
+<!--   <span style="font-weight: bold;">qeqweqeqweqweqweqweq</span>    
+<span style="font-family: 'lucida console', sans-serif;" id="yui_3_13_0_8_1396552789961_32">sdfsdfsdsfsdfs</span>
+<span style="font-style: italic;" id="yui_3_13_0_8_1396552789961_34">dfsdfsfdsfsfsfds</span>
+<span style="font-style: italic;" id="yui_3_13_0_8_1396552789961_34">dfsdfsfdsfsfsfds</span>
+-->
+
+</body>
+</html>
