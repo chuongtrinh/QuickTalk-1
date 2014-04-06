@@ -1,0 +1,11 @@
+Sources Cited: (for code and other purposes)
+
+http://www.sitepoint.com/build-a-better-button-in-css3/
+http://stackoverflow.com/questions/3121683/is-there-a-way-to-style-part-of-an-input-fields-value
+https://api.jquery.com/append/
+http://jsfiddle.net/Spokey/hW3vk/5/
+http://coursesweb.net/jquery/add-remove-elements-content-jquery
+http://stackoverflow.com/questions/3147588/post-non-form-values
+http://www.mindfiresolutions.com/Create-your-own-RTE-using-DIV-and-jQuery-953.php
+https://github.com/hassankhan/emojify.js/tree/master/images/emoji (source of emoji pictures)
+https://developer.mozilla.org/en/docs/Rich-Text_Editing_in_Mozilla
