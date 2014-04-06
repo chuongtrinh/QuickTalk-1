@@ -103,9 +103,19 @@ body{
 	padding:0px; 
 	margin: 0px;
 }
+
+a#tabc2 {
+	overflow: scroll;
+	display: block;
+}
+
 a#tabc2 {
 	float:right;
 	color:red;
+}
+
+#userlist {
+	overflow: auto;
 }
 
 ul.tabs li a {

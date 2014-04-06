@@ -35,7 +35,12 @@
 		<li><a href="#tabc2"><h5><i class="icon-comments-alt"></i>Message<span class="notification"><i class="icon-exclamation-sign"></i></span></h5></a></li>
 	</ul>
 	<div id="tabc1" class="tab-content">
-			<b>list of user</b>
+			<table id="userList" class="sortable">
+				<thead><tr>
+				<th>User ID</th>
+				<th>Name (Click to sort alphabetically)</th>				
+				</tr></thead>
+			</table>
 	</div>
 	
 	<div id="tabc2" class="tab-content">
@@ -242,7 +247,18 @@ $( "#bold" )
 				}		
 			});
 		}
+		
+		function getUserList() {
+			$.get('http://casino.curtiswendel.me:3000/api/getUser/', function(data) {
+				console.log(data);
+				$.each(data, function(i, user) {
+					$('#userList').append('<tr><td value='+user.ID+'>'+user.id+'</td><td value='+user.screenName+'>'+user.screenName+'</td></tr>');
+				});
+			});
+		}
+		
 		$(document).ready(function() {
+			getUserList();
 			var check_msg = setInterval(function() {
 				getLogMsg();
 
