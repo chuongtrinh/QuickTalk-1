@@ -1,0 +1,19 @@
+#chat_iframe {
+
+	/*background:url(css/img/gray_jean.png);*/
+
+	border:0px;
+}
+body {
+	background:yellow;
+
+}
+iframe {
+	width:500px;
+	height:505px;
+	border:0px;
+	position:absolute;
+	right:0px;
+	bottom:0px;
+
+}

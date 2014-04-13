@@ -1,7 +1,9 @@
 /*
 	99Lime.com HTML KickStart by Joshua Gatcke
 	style.css
+	
 
+	@modified by QuickTalk
 */
 
 /*---------------------------------
@@ -19,6 +21,10 @@ font-weight:normal;
 
 thead th,
 tbody th{
+font-family: "Arimo", arial, verdana, sans-serif;
+}
+
+blockquote{
 font-family: "Arimo", arial, verdana, sans-serif;
 }
 
@@ -42,68 +48,80 @@ font-family: "Arimo", arial, verdana, sans-serif;
 	LAYOUT
 -----------------------------------*/
 body{
-width: 75%;
-height: 75%
-margin:0;
-padding:0 0 0 0;
-color:#000;
-background: #00010;
-/* background:#efefef url(css/img/gray_jean.png); */
-font:normal 0.9em/150% 'Arimo', arial, verdana, sans-serif;
-text-shadow: 0 0 1px transparent; /* google font pixelation fix */
+	margin:0;
+	padding:0 0 0 0;
+
+	background:transparent;
+	z-index:-1;
+	font:normal 0.9em/150% 'Arimo', arial, verdana, sans-serif;
+	text-shadow: 0 0 1px transparent; /* google font pixelation fix */
+}
+/* overwrite grid in kickstart */
+.grid {
+	max-width:100%;
+	max-height:100%;
 }
 
 #base{
-width: 40%;
-height: 60%;
-position: fixed;
-bottom: 0px;
-right: 0px;
-margin:0;
-padding:0 0 0 0;
-color:#000;
-background:#efefef url(css/img/gray_jean.png);
-font:normal 0.9em/150% 'Arimo', arial, verdana, sans-serif;
-text-shadow: 0 0 1px transparent; /* google font pixelation fix */
+	width:100%;
+	height:100%;
+	position: fixed;
+
+	margin:0 0 0 0;
+	padding:0 0 0 0;
+	background:#efefef url(css/img/gray_jean.png);
+	font:normal 0.9em/150% 'Arimo', arial, verdana, sans-serif;
+	text-shadow: 0 0 1px transparent; /* google font pixelation fix */
+	opacity:1.0;
+	filter:alpha(opacity=60);
+	border-radius: 10px 10px 0 0;
+}
+#base:hover{
+	opacity:1.0;
+	filter:alpha(opacity=100);
+}
+#format {
+	float:right;
 }
 
-#chatBox {
-font-family:tahoma;
-font-size:12px;
-color:black;
-border: 1px teal solid;
-height: 225px;
-width: auto;
-overflow: scroll;
-float:none;
+
+
+.tab-content {
+	margin-left:2px;
+	padding: 0;
+}
+.mess {
+	padding:4px;
+}
+#chatbox {
+
+	font-size:12px;
+	color:black;
+	border: none;
+	height: 100px;
+	width: 100%;
+	float:none;
+	overflow-y: scroll; 
+	height:271px; 
+	background-color:white; 
+	padding:0px; 
+	margin: 0px;
+	padding-left: 3px;
+}
+a#tabc2 {
+	float:right;
+	color:red;
 }
 
-#textarea{
-width:auto;
-height:100px;
-margin:0;
-border:1px solid #ccc;
-padding:5px;
-vertical-align: middle;
-font-family:inherit;
-font-size:0.9em;
--moz-border-radius:5px;
--webkit-border-radius:5px;
-border-radius:5px;
--moz-box-shadow:inset 0 0 6px #ccc;
--webkit-box-shadow:inset 0 1px 6px #ccc;
-box-shadow:inset 0 1px 6px #ccc;
--moz-box-sizing: border-box;
--webkit-box-sizing: border-box;
-box-sizing: border-box;
+ul.tabs li a {
+	padding: 5px 51px;	
+}
+ul.tabs li a:first {
+	border-radius: 10px;
 }
 
 #minus{
 float:right;
-}
-
-#toolbar {
-	float:right;
 }
 
 #close{
@@ -112,15 +130,7 @@ float:right;
 
 #text2{
 float: bottom;
-}
-
-#submitbtn{
-width: auto;
-}
-
-#bold {  
-  input {font-weight:bold;}
-}
+} 
 
 #bold2 
 { 
@@ -138,7 +148,6 @@ width: auto;
 	 -moz-box-shadow: 0px 0px 20px rgba(255,255,255,0.8);
 	 box-shadow: 0px 0px 20px rgba(255,255,255,0.8); 
  }
-
 
 #wrap{
 width:100%;
@@ -247,6 +256,30 @@ margin:30px 0;
 display:block;
 }
 
+#textbox {
+	width: 100%;
+	height: 50px;
+	float:left;
+	padding:0;
+	margin: 0;
+	border-radius: 0px;
+	border: 1px solid gray;
+	overflow:auto;
+}
+button .emoji {
+
+}
+#input {
+	position:absolute;
+	bottom:0px;
+}
+.column {
+	border: 0px ;
+	border-color: none;
+	padding: 2px;
+}
+span {display:none;}
+
 .button-bar
 {
 	display: block;
@@ -267,12 +300,7 @@ display:block;
 	-webkit-transition: all 150ms ease;
 	transition: all 150ms ease;
 }
-.menu
-{
-	display: block;
-	font-size: 1.1em;
 
-}
 
 
 @-webkit-keyframes pulsate
@@ -302,29 +330,33 @@ display:block;
 
 #emoji_grid
 {
-margin:0;
-padding:0;
-position: absolute;
-top:100%;left:0;
-display:none;
-min-width:300px;
-max-width:150%;
-*width:150px;
-font-size:0;
+	margin:0;
+	padding:0;
+	position: absolute;
+	top:100%;left:0;
+	display:none;
+	min-width:350px;
+	max-width:750%;
+	*width:350px;
+	font-size:0;
+	max-height:275px;
+	overflow:auto;
 } 
 
 #fontsize
 {
-margin:0;
-padding:0;
-position: absolute;
-top:100%;left:0;
-display:none;
-min-width:249px;
-max-width:150%;
-*width:150px;
-font-size:0;
+	margin:0;
+	padding:0;
+	position: absolute;
+	top:100%;left:0;
+	display:none;
+	min-width:249px;
+	max-width:150%;
+	*width:150px;
+	font-size:0;
 } 
+
+
 
 
 th:hover
@@ -339,6 +371,14 @@ td:hover
 background:#f5f5f5;
 }
 
+.menu
+{
+	width:100%;
+	display: block;
+	font-size: 1.1em;
+	font-family: "Arimo", arial, verdana, sans-serif;
+
+}
 .emoji-menu {
 	position: absolute;
 	z-index: 999;
