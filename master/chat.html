@@ -8,13 +8,14 @@
 	<meta name="description" content="" />
 	
 	<!-- CSS -->
+	<link rel="stylesheet" href="normalize.css">
 	<link rel="stylesheet" type="text/css" href="css/kickstart.css" media="all" />
 	<link rel="stylesheet" type="text/css" href="style.css" media="all" /> 
 	
 
 	
 	<!-- Javascript -->
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 	<script type="text/javascript" src="js/kickstart.js"></script>
 
 	
@@ -24,10 +25,9 @@
 <div id="base" class="grid">
 	
 	<div class="col_12 top-bar">
-		<label id="topbar-name" for="textarea"><b>UserName</b></label>
+		<label id="topbar-name" for="textarea"></label>
 		<button id="close" class="small" onClick="window.close()"><i class="icon-remove-sign icon-2x"></i></button>
 		<button id="minus" class="small"><i class="icon-minus-sign icon-2x"></i></button>
-
 	</div>
 	<ul class="tabs center">
 		<li><a href="#tabc1"><h5>Contacts</h5></a></li>
@@ -41,81 +41,137 @@
 				</tr></thead>
 			</table>
 	</div>
-	
-	<div id="tabc2" class="tab-content">
-
+	<div id="tabc2" class="tab-content" >
 		<!-- Button Bar w/icons -->
 		<div class="col_12">
 			<ul class="menu">
-				<li><a href="#">Font</i> </a>
+				<li><a href="#">Font</a>
 					<ul>
 					<li id="arial"><a href="#"><i id="arial" class="icon-cog"></i><font face="arial">Arial</font></a></li>
 					<li id="courier"><a href="#"><i id="courier" class="icon-cog"></i><font face="courier">Courier</font></a></li>
 					<li id="verdana"><a href="#"><i id="verdana" class="icon-cog"></i><font face="verdana">Verdana</font></a></li>
 					<li id="roman"><a href="#"><i id="roman" class="icon-cog"></i><font face="times new roman">Times New Roman</font></a></li>
+					<li id="comic_sans"><a href="#"><i id="comic_sans" class="icon-cog"></i><font face="Comic Sans MS">Comic Sans MS</font></a></li>
 					</ul>
 				</li>
-
-				<li><a href="#"><i id="emoji" class="tooltip icon-magic" data-content="#tooltipcontentEmoji" ></i> </a>
+				
+				<!-- Emoji Menu  -->
+				<li><a href="#"><i id="emoji" class="tooltip" data-content="#tooltipcontentEmoji"  ><img class="emoticon" src="emojis/emoticon3.png" alt="Smiley face" height="13" width="17"></i></a>
 						<ul id="emoji_grid">
 							<table id="emoji_grid2" cellspacing="0" cellpadding="0">
 								<tbody><tr>
-									<th><img id="smile" src="emojis/smile.png" alt="Smiley face" height="25" width="25"></th>
-									<th><img id="angel" src="emojis/angel.png" alt="Smiley face" height="25" width="25"></th>
-									<th><img id="angry" src="emojis/angry.png" alt="Smiley face" height="25" width="25"></th>
-									<th><img id="anguished" src="emojis/anguished.png" alt="Smiley face" height="25" width="25"></th>
-									<th><img id="grin" src="emojis/grin.png" alt="Smiley face" height="25" width="25"></th>
-									<th><img id="smiley" src="emojis/smiley.png" alt="Smiley face" height="25" width="25"></th>
+									<th class="smile"><img class="smile" src="emojis/smile.png" alt="Smiley face" height="50" width="50"></th>
+									<th class="angel"><img class="angel" src="emojis/angel.png" alt="Smiley face" height="50" width="50"></th>
+									<th class="angry"><img class="angry" src="emojis/angry.png" alt="Smiley face" height="50" width="50"></th>
+									<th class="anguished"><img class="anguished" src="emojis/anguished.png" alt="Smiley face" height="50" width="50"></th>
+									<th class="grin"><img class="grin" src="emojis/grin.png" alt="Smiley face" height="50" width="50"></th>
+									<th class="smiley"><img class="smiley" src="emojis/smiley.png" alt="Smiley face" height="50" width="50"></th>
+								    <th class="joy"><img class="joy" src="emojis/joy.png" alt="Smiley face" height="50" width="50"></th>
 								</tr>
 								<tr>
-									<td><img id="imp" src="emojis/imp.png" alt="Smiley face" height="25" width="25"></td>
-									<td><img id="smiling_imp" src="emojis/smiling_imp.png" alt="Smiley face" height="25" width="25"></td>
-									<td><img id="blush" src="emojis/blush.png" alt="Smiley face" height="25" width="25"></td>
-									<td><img id="sleepy" src="emojis/sleepy.png" alt="Smiley face" height="25" width="25"></td>
-									<td><img id="bowtie" src="emojis/bowtie.png" alt="Smiley face" height="25" width="25"></td>
-									<td><img id="sleeping" src="emojis/sleeping.png" alt="Smiley face" height="25" width="25"></td>
+									<td class="imp"><img class="imp" src="emojis/imp.png" alt="Smiley face" height="50" width="50"></td>
+									<td class="smiling_imp"><img class="smiling_imp" src="emojis/smiling_imp.png" alt="Smiley face" height="50" width="50"></td>
+									<td class="blush"><img class="blush" src="emojis/blush.png" alt="Smiley face" height="50" width="50"></td>
+									<td class="sleepy"><img class="sleepy" src="emojis/sleepy.png" alt="Smiley face" height="50" width="50"></td>
+									<td class="bowtie"><img class="bowtie" src="emojis/bowtie.png" alt="Smiley face" height="50" width="50"></td>
+									<td class="sleeping"><img class="sleeping" src="emojis/sleeping.png" alt="Smiley face" height="50" width="50"></td>
+								    <td class="innocent"><img class="innocent" src="emojis/innocent.png" alt="Smiley face" height="50" width="50"></td>
 								</tr><tr>
-									<td><img id="tired_face" src="emojis/tired_face.png" alt="Smiley face" height="25" width="25"></td>
-									<td><img id="alien" src="emojis/alien.png" alt="Smiley face" height="25" width="25"></td>
-									<td><img id="sweat" src="emojis/sweat.png" alt="Smiley face" height="25" width="25"></td>
-									<td><img id="wink" src="emojis/wink.png" alt="Smiley face" height="25" width="25"></td>
-									<td><img id="worried" src="emojis/worried.png" alt="Smiley face" height="25" width="25"></td>
-									<td><img id="scream" src="emojis/scream.png" alt="Smiley face" height="25" width="25"></td>
+									<td class="tired_face"><img class="tired_face" src="emojis/tired_face.png" alt="Smiley face" height="50" width="50"></td>
+									<td class="alien"><img class="alien" src="emojis/alien.png" alt="Smiley face" height="50" width="50"></td>
+									<td class="sweat"><img class="sweat" src="emojis/sweat.png" alt="Smiley face" height="50" width="50"></td>
+									<td class="wink"><img class="wink" src="emojis/wink.png" alt="Smiley face" height="50" width="50"></td>
+									<td class="worried"><img class="worried" src="emojis/worried.png" alt="Smiley face" height="50" width="50"></td>
+									<td class="scream"><img class="scream" src="emojis/scream.png" alt="Smiley face" height="50" width="50"></td>
+									<td class="kissing_face"><img class="kissing_face" src="emojis/kissing_face.png" alt="Smiley face" height="50" width="50"></td>
 								</tr><tr>
-									<td><img id="skull" src="emojis/skull.png" alt="Smiley face" height="25" width="25"></td>
-									<td><img id="rage" src="emojis/rage.png" alt="Smiley face" height="25" width="25"></td>
-									<td><img id="disappointed_relieved" src="emojis/disappointed_relieved.png" alt="Smiley face" height="25" width="25"></td>
-									<td><img id="open_mouth" src="emojis/open_mouth.png" alt="Smiley face" height="25" width="25"></td>
-									<td><img id="laughing" src="emojis/laughing.png" alt="Smiley face" height="25" width="25"></td>
-									<td><img id="kissing_face" src="emojis/kissing_face.png" alt="Smiley face" height="25" width="25"></td>
+									<td class="skull"><img class="skull" src="emojis/skull.png" alt="Smiley face" height="50" width="50"></td>
+									<td class="rage"><img class="rage" src="emojis/rage.png" alt="Smiley face" height="50" width="50"></td>
+									<td class="disappointed_relieved"><img class="disappointed_relieved" src="emojis/disappointed_relieved.png" alt="Smiley face" height="50" width="50"></td>
+									<td class="open_mouth"><img class="open_mouth" src="emojis/open_mouth.png" alt="Smiley face" height="50" width="50"></td>
+									<td class="laughing"><img class="laughing" src="emojis/laughing.png" alt="Smiley face" height="50" width="50"></td>
+									<td class="kissing_face"><img class="kissing_face" src="emojis/kissing_face.png" alt="Smiley face" height="50" width="50"></td>
+								    <td class="heart_eyes"><img class="heart_eyes" src="emojis/heart_eyes.png" alt="Smiley face" height="50" width="50"></td>
+								</tr><tr>							
+									<td class="cry"><img class="cry" src="emojis/cry.png" alt="Smiley face" height="50" width="50"></td>
+									<td class="disappointed"><img class="disappointed" src="emojis/disappointed.png" alt="Smiley face" height="50" width="50"></td>
+									<td class="mask"><img class="mask" src="emojis/mask.png" alt="Smiley face" height="50" width="50"></td>
+									<td class="neckbeard"><img class="neckbeard" src="emojis/neckbeard.png" alt="Smiley face" height="50" width="50"></td>
+									<td class="gif_loser"><img class="gif_loser" src="emojis/loser.gif" alt="Smiley face" height="50" width="50"></td>
+									<td class="gif_puke"><img class="gif_puke" src="emojis/puke.gif" alt="Smiley face" height="50" width="50"></td>
+									<td class="gif_sing"><img class="gif_sing" src="emojis/sing.gif" alt="Smiley face" height="50" width="50"></td>
 								</tr><tr>
-									<td id="joy"><img src="emojis/joy.png" alt="Smiley face" height="25" width="25"></td>
-									<td><img id="innocent" src="emojis/innocent.png" alt="Smiley face" height="25" width="25"></td>
-									<td><img id="heart_eyes" src="emojis/heart_eyes.png" alt="Smiley face" height="25" width="25"></td>
-									<td><img id="cry" src="emojis/cry.png" alt="Smiley face" height="25" width="25"></td>
-									<td><img id="disappointed" src="emojis/disappointed.png" alt="Smiley face" height="25" width="25"></td>
-									<td><img id="pig" src="emojis/pig.png" alt="Smiley face" height="25" width="25"></td>
+									<td class="gif_callme"><img class="gif_callme" src="emojis/callme.gif" alt="Smiley face" height="50" width="50"></td>
+									<td class="gif_rollingonthefloor"><img class="gif_rollingonthefloor" src="emojis/rollingonthefloor.gif" alt="Smiley face" height="50" width="50"></td>
+									<td class="gif_cook"><img class="gif_cook" src="emojis/cook.gif" alt="Smiley face" height="50" width="50"></td>
+									<td class="gif_studying"><img class="gif_studying" src="emojis/studying.gif" alt="Smiley face" height="50" width="50"></td>
+									<td class="gif_fight"><img class="gif_fight" src="emojis/fight.gif" alt="Smiley face" height="50" width="50"></td>
+									<td class="gif_exercise"><img class="gif_exercise" src="emojis/exercise.gif" alt="Smiley face" height="50" width="50"></td>
+									<td class="gif_party"><img class="gif_party" src="emojis/party.gif" alt="Smiley face" height="50" width="50"></td>
 								</tr><tr>
-									<td><img id="birthday" src="emojis/birthday.png" alt="Smiley face" height="25" width="25"></td>
-									<td><img id="broken_heart" src="emojis/broken_heart.png" alt="Smiley face" height="25" width="25"></td>
-									<td><img id="poop" src="emojis/poop.png" alt="Smiley face" height="25" width="25"></td>
-									<td><img id="balloon" src="emojis/balloon.png" alt="Smiley face" height="25" width="25"></td>
-									<td><img id="soccer" src="emojis/soccer.png" alt="Smiley face" height="25" width="25"></td>
-									<td><img id="barber" src="emojis/barber.png" alt="Smiley face" height="25" width="25"></td>
+									<td class="gif_wave"><img class="gif_wave" src="emojis/wave.gif" alt="Smiley face" height="50" width="50"></td>
+									<td class="gif_whew"><img class="gif_whew" src="emojis/whew.gif" alt="Smiley face" height="50" width="50"></td>
+									<td class="gif_cheer"><img class="gif_cheer" src="emojis/cheer.gif" alt="Smiley face" height="50" width="50"></td>
+									<td class="gif_search"><img class="gif_search" src="emojis/search.gif" alt="Smiley face" height="50" width="50"></td>
+									<td class="soccer"><img class="soccer" src="emojis/soccer.png" alt="Smiley face" height="50" width="50"></td>
+									<td class="football"><img class="football" src="emojis/football.png" alt="Smiley face" height="50" width="50"></td>
+									<td class="video_game"><img class="video_game" src="emojis/video_game.png" alt="Smiley face" height="50" width="50"></td>
 								</tr><tr>
-									<td><img id="beer" src="emojis/beer.png" alt="Smiley face" height="25" width="25"></td>
-									<td><img id="bear" src="emojis/bear.png" alt="Smiley face" height="25" width="25"></td>
-									<td><img id="apple" src="emojis/apple.png" alt="Smiley face" height="25" width="25"></td>
-									<td><img id="chocolate_bar" src="emojis/chocolate_bar.png" alt="Smiley face" height="25" width="25"></td>
-									<td><img id="banana" src="emojis/banana.png" alt="Smiley face" height="25" width="25"></td>
-									<td><img id="bouquet" src="emojis/bouquet.png" alt="Smiley face" height="25" width="25"></td>
+									<td class="birthday"><img class="birthday" src="emojis/birthday.png" alt="Smiley face" height="50" width="50"></td>
+									<td class="broken_heart"><img class="broken_heart" src="emojis/broken_heart.png" alt="Smiley face" height="50" width="50"></td>
+									<td class="poop"><img class="poop" src="emojis/poop.png" alt="Smiley face" height="50" width="50"></td>
+									<td class="balloon"><img class="balloon" src="emojis/balloon.png" alt="Smiley face" height="50" width="50"></td>
+									<td class="hamburger"><img class="hamburger" src="emojis/hamburger.png" alt="Smiley face" height="50" width="50"></td>
+									<td class="barber"><img class="barber" src="emojis/barber.png" alt="Smiley face" height="50" width="50"></td>
+									<td class="usa"><img class="usa" src="emojis/usa.png" alt="Smiley face" height="50" width="50"></td>
 								</tr><tr>
-									<td><img id="horse" src="emojis/horse.png" alt="Smiley face" height="25" width="25"></td>
-									<td><img id="hamburger" src="emojis/hamburger.png" alt="Smiley face" height="25" width="25"></td>
-									<td><img id="cookie" src="emojis/cookie.png" alt="Smiley face" height="25" width="25"></td>
-									<td><img id="usa" src="emojis/usa.png" alt="Smiley face" height="25" width="25"></td>
-									<td><img id="football" src="emojis/football.png" alt="Smiley face" height="25" width="25"></td>
-									<td><img id="video_game" src="emojis/video_game.png" alt="Smiley face" height="25" width="25"></td>
+									<td class="beer"><img class="beer" src="emojis/beer.png" alt="Smiley face" height="50" width="50"></td>
+									<td class="bear"><img class="bear" src="emojis/bear.png" alt="Smiley face" height="50" width="50"></td>
+									<td class="apple"><img class="apple" src="emojis/apple.png" alt="Smiley face" height="50" width="50"></td>
+									<td class="chocolate_bar"><img class="chocolate_bar" src="emojis/chocolate_bar.png" alt="Smiley face" height="50" width="50"></td>
+									<td class="banana"><img class="banana" src="emojis/banana.png" alt="Smiley face" height="50" width="50"></td>
+									<td class="bouquet"><img class="bouquet" src="emojis/bouquet.png" alt="Smiley face" height="50" width="50"></td>
+									<td class="cookie"><img class="cookie" src="emojis/cookie.png" alt="Smiley face" height="50" width="50"></td>
+								</tr><tr>
+								  <td class="star"><img class="star" src="emojis/star.png" alt="Smiley face" height="50" width="50"></td>
+								  <td class="tiger"><img class="tiger" src="emojis/tiger.png" alt="Smiley face" height="50" width="50"></td>
+								  <td class="whale"><img class="whale" src="emojis/whale.png" alt="Smiley face" height="50" width="50"></td>
+								  <td class="snowman"><img class="snowman" src="emojis/snowman.png" alt="Smiley face" height="50" width="50"></td>
+								  <td class="muscle"><img class="muscle" src="emojis/muscle.png" alt="Smiley face" height="50" width="50"></td>
+					              <td class="handbag"><img class="handbag" src="emojis/handbag.png" alt="Smiley face" height="50" width="50"></td>
+								  <td class="boot"><img class="boot" src="emojis/boot.png" alt="Smiley face" height="50" width="50"></td>								  
+								</tr><tr>
+								  <td class="cactus"><img class="cactus" src="emojis/cactus.png" alt="Smiley face" height="50" width="50"></td>
+								  <td class="bug"><img class="bug" src="emojis/bug.png" alt="Smiley face" height="50" width="50"></td>
+								  <td class="cocktail"><img class="cocktail" src="emojis/cocktail.png" alt="Smiley face" height="50" width="50"></td>
+								  <td class="dragon"><img class="dragon" src="emojis/dragon.png" alt="Smiley face" height="50" width="50"></td>
+								  <td class="doughnut"><img class="doughnut" src="emojis/doughnut.png" alt="Smiley face" height="50" width="50"></td>
+					              <td class="book"><img class="book" src="emojis/book.png" alt="Smiley face" height="50" width="50"></td>
+								  <td class="ramen"><img class="ramen" src="emojis/ramen.png" alt="Smiley face" height="50" width="50"></td>								  
+								</tr><tr>
+								  <td class="dollar"><img class="dollar" src="emojis/dollar.png" alt="Smiley face" height="50" width="50"></td>
+								  <td class="clubs"><img class="clubs" src="emojis/clubs.png" alt="Smiley face" height="50" width="50"></td>
+								  <td class="diamonds"><img class="diamonds" src="emojis/diamonds.png" alt="Smiley face" height="50" width="50"></td>
+								  <td class="spades"><img class="spades" src="emojis/spades.png" alt="Smiley face" height="50" width="50"></td>
+								  <td class="hearts"><img class="hearts" src="emojis/hearts.png" alt="Smiley face" height="50" width="50"></td>
+					              <td class="tractor"><img class="tractor" src="emojis/tractor.png" alt="Smiley face" height="50" width="50"></td>
+								  <td class="trophy"><img class="trophy" src="emojis/trophy.png" alt="Smiley face" height="50" width="50"></td>								  
+								</tr><tr>
+								  <td class="monkey"><img class="monkey" src="emojis/monkey.png" alt="Smiley face" height="50" width="50"></td>
+								  <td class="panda_face"><img class="panda_face" src="emojis/panda_face.png" alt="Smiley face" height="50" width="50"></td>
+								  <td class="nail_care"><img class="nail_care" src="emojis/nail_care.png" alt="Smiley face" height="50" width="50"></td>
+								  <td class="ok_hand"><img class="ok_hand" src="emojis/ok_hand.png" alt="Smiley face" height="50" width="50"></td>
+								  <td class="turtle"><img class="turtle" src="emojis/turtle.png" alt="Smiley face" height="50" width="50"></td>
+					              <td class="zap"><img class="zap" src="emojis/zap.png" alt="Smiley face" height="50" width="50"></td>
+								  <td class="iphone"><img class="iphone" src="emojis/iphone.png" alt="Smiley face" height="50" width="50"></td>								  
+								</tr><tr>
+								  <td class="high_heel"><img class="high_heel" src="emojis/high_heel.png" alt="Smiley face" height="50" width="50"></td>
+								  <td class="honeybee"><img class="honeybee" src="emojis/honeybee.png" alt="Smiley face" height="50" width="50"></td>
+								  <td class="pig"><img class="pig" src="emojis/pig.png" alt="Smiley face" height="50" width="50"></td>
+								  <td class="horse"><img class="horse" src="emojis/horse.png" alt="Smiley face" height="50" width="50"></td>
+								  <td class="pizza"><img class="pizza" src="emojis/pizza.png" alt="Smiley face" height="50" width="50"></td>
+					              <td class="fire"><img class="fire" src="emojis/fire.png" alt="Smiley face" height="50" width="50"></td>
+								  <td class="fist"><img class="fist" src="emojis/fist.png" alt="Smiley face" height="50" width="50"></td>								  
 								</tr></tbody>
 							</table>
 						</ul>
@@ -128,135 +184,105 @@
 					<li id="Size7"><a href="#"><font size="7">Font Size</font></a></li>
 					</ul>	
 				</li>
-				<li><a href="#"><i id="bold" class="tooltip icon-bold" data-content="#tooltipcontentBold" ></i> </a></li>
+				<!-- Color Select Button -->	
+				<select id="color_select">
+					<option value="0" id="#000000" style="background-color:#000000;color:white"></option>
+					<option value="1" id="#000000" style="background-color:#000000;color:white"></option> <!-- Black -->	
+					<option value="2" id="#504A4B" style="background-color:#504A4B;"></option><!-- Gray Wolf -->	
+					<option value="3" id="#B6B6B4" style="background-color:#B6B6B4;"></option> <!-- Gray Cloud -->	
+					<option value="4" id="#BCC6CC" style="background-color:#BCC6CC;"></option> <!-- Metallic Silver -->	
+					<option value="5" id="#151B54" style="background-color:#151B54;color:white"></option> <!-- midnight Blue -->	
+					<option value="6" id="#1F45FC" style="background-color:#1F45FC;"></option> <!-- Blue Orchid -->	
+					<option value="7" id="#98AFC7" style="background-color:#98AFC7;"></option> <!-- Blue Gray -->	
+					<option value="8" id="#3BB9FF" style="background-color:#3BB9FF;"></option>   <!-- Deep Sky Blue -->	
+					<option value="9" id="#728C00" style="background-color:#728C00;"></option> <!-- Venom Green -->	
+					<option value="10" id="#347C17" style="background-color:#347C17;"></option> <!-- Shamrock Green -->	
+					<option value="11" id="#00FF00" style="background-color:#00FF00;"></option><!-- Lime -->	
+					<option value="12" id="#FF0000" style="background-color:#FF0000;"></option><!-- Red -->	
+					<option value="13" id="#9F000F" style="background-color:#9F000F;"></option> <!-- Cranberry -->	
+					<option value="14" id="#FCDFFF" style="background-color:#FCDFFF;"></option> <!-- Cotton Candy -->	
+					<option value="15" id="#F660AB" style="background-color:#F660AB;"></option> <!-- Hot Pink -->	
+					<option value="16" id="#8E35EF" style="background-color:#8E35EF;"></option><!-- Purple -->	
+					<option value="17" id="#571B7E" style="background-color:#571B7E;"></option> <!-- Purple Iris -->	
+					<option value="18" id="#E66C2C" style="background-color:#E66C2C;"></option><!-- Orange -->	
+					<option value="19" id="#8A4117" style="background-color:#8A4117;"></option><!-- Sienna -->	
+					<option value="20" id="#FFFF00" style="background-color:#FFFF00;"></option><!-- Yellow -->	
+					<option value="21" id="#806517" style="background-color:#806517;"></option><!-- Oak Brown -->	
+					<option value="22" id="#E77471" style="background-color:#E77471;"></option> <!-- Light Coral -->	
+					<option value="24" id="#FFFFFF" style="background-color:#FFFFFF;"></option><!-- White -->	
+				</select>
+				<li id="bold"><a href="#"><i id="bold" class="tooltip icon-bold" data-content="#tooltipcontentBold" ></i> </a></li>
 				<li id="italic"><a href="#"><i id="italic" class="tooltip icon-italic" data-content="#tooltipcontentItalic"></i> </a></li>
 				<li id="underline"><a href="#"><i id="underline" class="tooltip icon-underline" data-content="#tooltipcontentUnder"></i> </a></li>
-				<li><a href="#"><i id="aligntext" class="tooltip icon-align-justify" data-content="#tooltipcontentAlign"></i> </a></li>
 			</ul>
 		</div> 
 			<!-- Tooltip Contents -->
 		
-			<div class="tooltip-content" id="tooltipcontentBold">
-			<p><strong><font color="white">Bold Text</font></strong></p></div>	
-			<div class="tooltip-content" id="tooltipcontentItalic">
-			<p><em><font color="white">Italicize Text</font></em></p></div>
-			<div class="tooltip-content" id="tooltipcontentUnder">
-			<p><u><font color="white">Underline Text</font></u></p></div>
-			<div class="tooltip-content" id="tooltipcontentFont">
-			<p><font color="white">Change Font</font></p></div>
-			<div class="tooltip-content" id="tooltipcontentEmoji">
-			<p><font color="white">Emojis!!</font></p></div>
-			<div class="tooltip-content" id="tooltipcontentFontSize">
-			<p><font color="white">Change Font Size</font></p></div>
-			<div class="tooltip-content" id="tooltipcontentAlignment">
-			<p><font color="white">Align Text</font></p></div>
-			
-			
+		<div class="tooltip-content" id="tooltipcontentBold">
+			<p>
+				<strong>
+					<font color="white">Bold Text</font>
+				</strong>
+			</p>
+		</div>	
+		<div class="tooltip-content" id="tooltipcontentItalic">
+			<p>
+				<em><font color="white">Italicize Text</font></em>
+			</p>
+		</div>
+		<div class="tooltip-content" id="tooltipcontentUnder">
+			<p>
+				<u><font color="white">Underline Text</font></u>
+			</p>
+		</div>
+		<div class="tooltip-content" id="tooltipcontentFont">
+			<p>
+				<font color="white">Change Font</font>
+			</p>
+		</div>
+		<div class="tooltip-content" id="tooltipcontentEmoji">
+			<p>
+				<font color="white">Emojis!!</font>
+			</p>
+		</div>
+		<div class="tooltip-content" id="tooltipcontentFontSize">
+			<p>
+				<font color="white">Change Font Size</font>
+			</p>
+		</div>
+		<div class="tooltip-content" id="tooltipcontentAlignment">
+			<p>
+				<font color="white">Align Text</font>
+			</p>
+		</div>
 		<div class="col_12" style="margin-top:0px; padding:0px">
-			<div id="chatbox" >chatbox</div>
+			<div id="chatbox"></div>
 		</div>
 		<div class="col_12">
 		<!-- Placeholder Text -->
-			<div id="textbox" contenteditable="true" unselectable="off"></div>
+			<div id="textbox"  contenteditable="true" unselectable="off">Click to begin writing...</div>
 			<form>
 				<input type="hidden" name="your_div_content" id="hidden_element" />
 			</form>
 		</div>
-
 	</div>
-	
-</div> <!-- End Grid -->
+</div> 
 
-<!-- Minimze -->
-<script>
-		$("#minus").css('position', 'relative').click(function(){
-			if($("#base").css('bottom') == '-450px') {
-				$("#base").animate({'bottom': '0px'}, 1000);
-				$("#text-input").show("slow");
-			}
-			else {
-				$("#base").animate({'bottom': '-450px'}, 1000);
-				$("#text-input").hide("slow");			
-			}
-		});
-</script>
-
-<script>
-$("color_block").click( function() { 
-var color = $( this ).css( "background-color" );
-var font_weight = $( "#textbox" ).css( "font-weight" );
- $( "#result" ).html( "That div is <span style='color:" +
-    color + ";'>" + color + font_weight + "</span>." )
-return false; 
-} );
+<script type="text/javascript">
+	$("#minus").css('position', 'relative').click(function(){
+		if($("#base").css('bottom') == '-450px') {
+			$("#base").animate({'bottom': '0px'}, 1000);
+			$("#text-input").show("slow");
+		}
+		else {
+			$("#base").animate({'bottom': '-450px'}, 1000);
+			$("#text-input").hide("slow");			
+		}
+	});
+	 
 </script>
 
 
-<script>
-$( "#bold" ).hover(
-  function() {
-    $( "#bold").css({
-      "-webkit-animation": "pulsate 1.2s linear infinite",
-	  "animation" : "pulsate 1.2s linear infinite"
-    });
-  }, 
-  function() {
-    $( "#bold").css({
-      "-webkit-animation": "",
-	  "animation" : ""
-    });
-  }
-);
- 
-</script>
-
-<script>
-var boldClicked = false;
-
-$( "#bold" )
-  .on( "mouseenter", function() {
-    $( "#textbox").css({
-      "font-weight": "bold"
-    });
-  })
-  .on( "mouseleave", function() {
-  if (!boldClicked)
-    {
-		var styles = {
-		fontWeight: ""
-		};
-		$( "#textbox" ).css( styles ); 
-	}
-  })
-    .on( "click", function() {
-	var font_weight = $( "#textbox" ).css( "font-weight");
-	if( !boldClicked)	
-	{
-        var input = $('<input />', {
-            'type': 'text',
-            'name': 'unique',
-            'value': $(this).html()
-        });
-		
-		var $new_span = $('<span style="font-weight: bold;" />');      // new <span> with class="spn"
-		$('#textbox').append($new_span)
-	
-		boldClicked = true;
-		$( "#bold" ).css( "color", "green" );	
-		return false;
-	}
-	else 
-	{
-	var styles = {
-		fontWeight: ""
-		};
-		$( "#textbox" ).css( styles ); 
-		$( "#bold" ).css( "color", "" );
-		boldClicked = false;
-	}
-	
-  });
-</script>
 
 <script type="text/javascript">
 	$(function(){
@@ -265,47 +291,145 @@ $( "#bold" )
 			  $( "#textbox" ).empty();
 		  });
 		 
-		 $('#bold').click(function(){document.execCommand('bold', false, null);$('#textbox').focus();return false;});
-		 $('#italic').click(function(){document.execCommand('italic', false, null);$('#textbox').focus();return false;});
-		 $('#underline').click(function(){document.execCommand('underline', false, null);$('#textbox').focus();return false;});
+		 $('#bold').click(function(){
+			 document.execCommand('bold', false, null);
+			 $('#textbox').focus();
+			 return false;
+		 });
+		 $('#italic').click(function(){
+			 document.execCommand('italic', false, null);
+			 $('#textbox').focus();
+			 return false;
+		});
+		 $('#underline').click(function(){
+			 document.execCommand('underline', false, null);
+			 $('#textbox').focus();
+			 return false;
+		 });
 		 
 		 $('#font').on('change', function() {
 		  alert( this.value ); // or $(this).val()
 		  });
 		 
-		 $('#arial').click(function(){document.execCommand('fontName', false, "Arial");$('#textbox').focus();return false;});
-		 $('#courier').click(function(){document.execCommand('fontName', false, "Courier");$('#textbox').focus();return false;});
-		 $('#verdana').click(function(){document.execCommand('fontName', false, "Verdana");$('#textbox').focus();return false;});
-		 $('#roman').click(function(){document.execCommand('fontName', false, "Times New Roman");$('#textbox').focus();return false;});
-		 
-		 $('#emoji_smile').click(function(){$('#textbox').append('<img id="theImg" src="emojis/smile.png" height="20" width="20" />');return false;});
+		 $('#arial').click(function(){
+			 document.execCommand('fontName', false, "Arial");
+			 $('#textbox').focus();
+			 return false;
+		 });
+		 $('#courier').click(function(){
+			 document.execCommand('fontName', false, "Courier");
+			 $('#textbox').focus();
+			 return false;
+		 });
+		 $('#verdana').click(function(){
+			 document.execCommand('fontName', false, "Verdana");
+			 $('#textbox').focus();
+			 return false;
+		 });
+		 $('#roman').click(function(){
+			 document.execCommand('fontName', false, "Times New Roman");
+			 $('#textbox').focus();
+			 return false;
+		 });
+		 $('#comic_sans').click(function(){
+			document.execCommand('fontName', false, "Comic Sans MS");
+			$('#textbox').focus();
+			return false;
+		});
 		 
 		 $('#emoji_grid2').click(function(e){
-			var id = ($(e.target)).attr('id');
-			if (id !== undefined ) {
-				var string = '<img id="theImg" src="emojis/' + id + '.png" height="20" width="20" />'
-				$('#textbox').append(string);
+			var id = ($(e.target)).attr('class');
+			alert("id : " + id);
+			var gif = id.substring(0,3);
+			var gif_id = id.substring(4,id.length);
+			if (id !== undefined && !(gif=="gif") ) {
+				var image = '<img id="theImg" src="emojis/' + id + '.png" height="20" width="20" />';
+				$('#textbox').append(image);
 				$('#textbox').focus();
-			} 
+			} else {
+				if(gif_id=="fight" || gif_id=="exercise" ||gif_id=="cook"){
+			    var image = '<img id="theImg" src="emojis/' + gif_id + '.gif" height="60" width="60" />';
+				$('#textbox').append(image);
+				$('#textbox').focus();
+                   } else {							   
+				   var image = '<img id="theImg" src="emojis/' + gif_id + '.gif" height="30" width="30" />';
+				   $('#textbox').append(image);
+				   $('#textbox').focus();			   
+				   }				
+			}
 			return false;
 		   });
 		   
-		 $('#Size1').click(function(){document.execCommand('fontSize', false, "1");$('#textbox').focus();return false;});
-		 $('#Size3').click(function(){document.execCommand('fontSize', false, "3");$('#textbox').focus();return false;});
-		 $('#Size5').click(function(){document.execCommand('fontSize', false, "5");$('#textbox').focus();return false;});
-		 $('#Size7').click(function(){document.execCommand('fontSize', false, "7");$('#textbox').focus();return false;});
+		 $('#Size1').click(function(){
+				document.execCommand('fontSize', false, "1");
+				$('#textbox').focus();
+				return false;
+			});
+		 $('#Size3').click(function(){
+			 document.execCommand('fontSize', false, "3");
+			 $('#textbox').focus();
+			 return false;
+		});
+		 $('#Size5').click(function(){
+			 document.execCommand('fontSize', false, "5");
+			 $('#textbox').focus();
+			 return false;
+		});
+		 $('#Size7').click(function(){
+			 document.execCommand('fontSize', false, "7");
+			 $('#textbox').focus();
+			 return false;
+		});	
+	
+	
+        <!-- Color Select Function   -->
+		$( "select" )     
+		  .change(function() {
+			var str = "";
+			$( "select option:selected" ).each(function() {
+			 // str += $( this ).text() + " ";
+			  id = $(this).attr('id');
+			  var color = $(this).css("background-color");
+			});
+			//$( "#samplediv").text( str );
+			document.execCommand('foreColor', false, id);
+			$("select").css("background-color",id);
+			$('#textbox').focus();
+		  })
+         .trigger( "change" );
 		 
 	});
 </script>
-	<script type="text/javascript">
+	<script type ="text/javascript">
+
+		function getUserList() {
+			$.get('http://casino.curtiswendel.me:3000/api/getUser/', function (data) {
+				console.log(data);
+				$.each(data, function(i, user) {
+					$('#userList').append('<tr><td value='+user.ID+'>'+user.id+'</td><td value='+user.screenName+'>'+user.screenName+'</td></tr>');
+				});
+			});
+		}
+		function getUserInfo(userID) {
+			$.get('http://casino.curtiswendel.me:8080/api/getUser/'+userID, function (data) {
+				console.log('userdata: '+ data);
+				return data;
+			});
+		}
+		function getUrlParameter(sParam) {
+			var sPageURL = window.location.search.substring(1);
+			console.log("URl: "+sPageURL);
+			if (sPageURL.indexOf("&") != -1) {
+				var sURLVariables = sPageURL.split('&');
+				for (var i = 0; i < sURLVariables.length; i++) {
+					var sParameterName = sURLVariables[i].split('=');
+					if (sParameterName[0] == sParam) {
+						return sParameterName[1];
+					}
+				}
+			}
+		}
 		
-		/* Info provided by others */
-		var max_player = 5;
-		var user_name = "ctrinh";
-		var room = "poker";
-		var display_name="chuong trinh";
-		
-		/* ------------------------ */
 		
 		$('#yourform').submit(function(){
 			$('#hidden_element').val( /* ... set #hidden_element's value ... */
@@ -323,14 +447,46 @@ $( "#bold" )
 			}
 		});
 		
+	</script>
+	<script type="text/javascript">
+
+		/* Default value */
+		var user_name = 'Anonymous'; 
+		var display_name = 'Anonymous';
+		var current_room = 'Main';
+		var login_time;
+
+		/* --------------*/
+		
+		var userID = getUrlParameter('userID');
+		var room = getUrlParameter('room');
+		
+		/* Account server error
+		
+		if (userID !== undefined || userID != ''){
+			user_name = getUserInfo(userID).email;
+			display_name = getUserInfo(userID).screenName;
+		} 
+		if (room !== undefined || room != '') {
+			current_room = room;
+		}
+		*/
+		$(document).ready(function() {
+			login_time = new Date().toISOString().slice(0, 19).replace('T', ' ');
+			console.log("login time " +login_time);
+			$('#topbar-name').html('<b>' +display_name +'</b>');
+			console.log(display_name);
+			console.log(current_room);
+			
+		});
+
 		function writeLogMsg() {
 			console.log("\nMessage is being sent: "+ $('#hidden_element').val());
-			//$('#chatbox').val($('#hidden_element').val());
 			$.ajax({
 				url:"chat_log.php",
 				dataType:'json',
 				type:"POST",
-				data: {mode: "write_msg", user_name: user_name, display_name:display_name, room: room, text:  $('#hidden_element').val()},
+				data: {mode: "write_msg", user_name: user_name, display_name:display_name, room: current_room, text:  $('#hidden_element').val()},
 				cache:false,
 				success: function(response_json) {
 					if (response_json['response'].error == true) {
@@ -344,12 +500,13 @@ $( "#bold" )
 		}
 		function getLogMsg() {
 			var oldscrollHeight = $("#chatbox").attr("scrollHeight") - 20;
+			console.log(user_name +' - ' +display_name + ' - ' + current_room + ' - ' + login_time);
 			$.ajax({
 				url:"chat_log.php",
 				cache:false,
 				dataType: 'json',
 				type:"POST",
-				data: {mode: "get_msg", user_name: user_name, display_name:display_name, room: room},
+				data: {mode: "get_msg", user_name: user_name, display_name:display_name, room: current_room, login_time: login_time},
 				success: function(response_json) {
 					
 					if (response_json['response'].error == false) {
@@ -357,32 +514,37 @@ $( "#bold" )
 						//console.log("\n results: "+ response_json['data']);
 						results = response_json;
 						//console.log("reponse: "+results['response']);
-						var len = results['data'].length;
-						var chat_name;	// either display_name (if available) or user_name (if display_name not exists)
-						var message_log = "<b><i>Welcome to " + room + " game</b></i>\n";
-						for (var i=0; i < len; i++) {
-							if (!results['data'][i].display_name || results['data'][i].display_name.length ===0) {
-								chat_name = results['data'][i].user_name;
-							} else {
-								chat_name = results['data'][i].display_name;
+						if (results['data']) {
+							var len = results['data'].length;
+							var chat_name;	// either display_name (if available) or user_name (if display_name not exists)
+							var message_log = '<div id="welcome"><i><h5>Welcome to '+current_room + ' room</h5></i></div>';
+							for (var i=0; i < len; i++) {
+								if (!results['data'][i].display_name || results['data'][i].display_name.length ===0) {
+									chat_name = results['data'][i].user_name;
+								} else {
+									chat_name = results['data'][i].display_name;
+								}
+								var color = "chat_style"+((chat_name.charCodeAt(0) * chat_name.length) % 10); // unique css style for each user
+								var align = "align"+ (chat_name.charCodeAt(0) * chat_name.length) % 2;
+								message_log += "<div class='mess_container'> <div class='avatar_wrapper "+align+"'><img src='emojis/blush.png' height='40' width='40'><div class='arrow "
+											+align+"'></div></div><div class='mess msg " + color + " "+align+"' style=\'text-align:left;\'><b>"
+											+ chat_name + "</b>" +"<span class='time'>" + results['data'][i].msg_time + "</span>" 
+											+ "<br/><p>" + results['data'][i].message + "</p></div></div>";
 							}
-							var color = "chat_style"+((chat_name.charCodeAt(0) * chat_name.length) % max_player);
-							message_log += "<div class='mess msg " + color + "' style=\'text-align:left;\'><b>" + chat_name + "</b>" +"<span class='time'>" + results['data'][i].msg_time + "</span>:" 
-							+ "<p  style='display:inline'>" + results['data'][i].message + "</p></div>";
-						}
-						//console.log(message_log);
-						if ($('#chatbox').html().length != message_log.length) {
-							//console.log($('#chatbox').html());
-							//console.log("\n--------\n"+ message_log);
-							$("#chatbox").html(message_log);
-							var newscrollHeight = $("#chatbox").attr("scrollHeight") - 20;
-						
-							if(newscrollHeight > oldscrollHeight){
-								$("#chatbox").animate({ scrollTop: newscrollHeight }, 'normal');
+							
+							if ($('#chatbox').html().length != message_log.length) {
+								//console.log($('#chatbox').html());
+								//console.log("\n--------\n"+ message_log);
+								$("#chatbox").html(message_log);
+								var newscrollHeight = $("#chatbox").attr("scrollHeight") - 20;
+							
+								if(newscrollHeight > oldscrollHeight){
+									$("#chatbox").animate({ scrollTop: newscrollHeight }, 'normal');
+								}
+								console.log("loading msg\n");
+							}   else {
+								console.log("not loading msg\n");
 							}
-							console.log("loading msg\n");
-						}   else {
-							console.log("not loading msg\n");
 						}
 					} else {
 						$("#chatbox").html("Server is temporarily down!");
@@ -390,21 +552,18 @@ $( "#bold" )
 				}		
 			});
 		}
-		function getUserList() {
-			$.get('http://casino.curtiswendel.me:3000/api/getUser/', function(data) {
-				console.log(data);
-				$.each(data, function(i, user) {
-					$('#userList').append('<tr><td value='+user.ID+'>'+user.id+'</td><td value='+user.screenName+'>'+user.screenName+'</td></tr>');
-				});
-			});
-		}
+
 		$(document).ready(function() {
 			getUserList();
+			getLogMsg();
 			var check_msg = setInterval(function() {
 				getLogMsg();
 
-			},5000);
+			},4000);			
 		});
+		function animation() {
+			$('#welcome').animate({ width: '600px' }, 3000).animate({ width: '100px' }, 3000).fadeOut('slow');			
+		}
 	</script>
 
 </body>
