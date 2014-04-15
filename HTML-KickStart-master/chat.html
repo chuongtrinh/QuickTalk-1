@@ -8,13 +8,14 @@
 	<meta name="description" content="" />
 	
 	<!-- CSS -->
+	<link rel="stylesheet" href="normalize.css">
 	<link rel="stylesheet" type="text/css" href="css/kickstart.css" media="all" />
 	<link rel="stylesheet" type="text/css" href="style.css" media="all" /> 
 	
 
 	
 	<!-- Javascript -->
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 	<script type="text/javascript" src="js/kickstart.js"></script>
 
 	
@@ -24,10 +25,9 @@
 <div id="base" class="grid">
 	
 	<div class="col_12 top-bar">
-		<label id="topbar-name" for="textarea"><b>UserName</b></label>
+		<label id="topbar-name" for="textarea"></label>
 		<button id="close" class="small" onClick="window.close()"><i class="icon-remove-sign icon-2x"></i></button>
 		<button id="minus" class="small"><i class="icon-minus-sign icon-2x"></i></button>
-
 	</div>
 	<ul class="tabs center">
 		<li><a href="#tabc1"><h5>Contacts</h5></a></li>
@@ -41,24 +41,20 @@
 				</tr></thead>
 			</table>
 	</div>
-	
-	<div id="tabc2" class="tab-content">
-
+	<div id="tabc2" class="tab-content" >
 		<!-- Button Bar w/icons -->
 		<div class="col_12">
 			<ul class="menu">
-			
-			    <!-- Font Buttons -->
-				<li><a href="#"class="tooltip" data-content="#tooltipcontentFont">Font</i> </a>
+				<li><a href="#">Font</a>
 					<ul>
 					<li id="arial"><a href="#"><i id="arial" class="icon-cog"></i><font face="arial">Arial</font></a></li>
-					<li id="courier"><a href="#"><i id="courier" class="icon-cog spin"></i><font face="courier">Courier</font></a></li>
+					<li id="courier"><a href="#"><i id="courier" class="icon-cog"></i><font face="courier">Courier</font></a></li>
 					<li id="verdana"><a href="#"><i id="verdana" class="icon-cog"></i><font face="verdana">Verdana</font></a></li>
 					<li id="roman"><a href="#"><i id="roman" class="icon-cog"></i><font face="times new roman">Times New Roman</font></a></li>
 					<li id="comic_sans"><a href="#"><i id="comic_sans" class="icon-cog"></i><font face="Comic Sans MS">Comic Sans MS</font></a></li>
 					</ul>
 				</li>
-                
+				
 				<!-- Emoji Menu  -->
 				<li><a href="#"><i id="emoji" class="tooltip" data-content="#tooltipcontentEmoji"  ><img class="emoticon" src="emojis/emoticon3.png" alt="Smiley face" height="13" width="17"></i></a>
 						<ul id="emoji_grid">
@@ -180,8 +176,6 @@
 							</table>
 						</ul>
 				</li>
-				
-				<!-- Font Size Select Menu -->
 				<li><a href="#"><i class="tooltip icon-text-height" data-content="#tooltipcontentFontSize"></i> </a>
 					<ul id="fontsize">
 					<li id="Size1"><a href="#"><font size="1">Font Size</font></a></li>
@@ -190,10 +184,9 @@
 					<li id="Size7"><a href="#"><font size="7">Font Size</font></a></li>
 					</ul>	
 				</li>
-				
 				<!-- Color Select Button -->	
 				<select id="color_select">
-					<option value="0">--Colors-</option>
+					<option value="0" id="#000000" style="background-color:#000000;color:white"></option>
 					<option value="1" id="#000000" style="background-color:#000000;color:white"></option> <!-- Black -->	
 					<option value="2" id="#504A4B" style="background-color:#504A4B;"></option><!-- Gray Wolf -->	
 					<option value="3" id="#B6B6B4" style="background-color:#B6B6B4;"></option> <!-- Gray Cloud -->	
@@ -218,109 +211,181 @@
 					<option value="22" id="#E77471" style="background-color:#E77471;"></option> <!-- Light Coral -->	
 					<option value="24" id="#FFFFFF" style="background-color:#FFFFFF;"></option><!-- White -->	
 				</select>
-				<li id="bold"><a href="#"><i id="bold" class="tooltip icon-bold" data-content="#tooltipcontentBold" ></i> </a></li>
+				<li id="bold"><a href="#" class="readmore"><i id="bold" class="tooltip icon-bold" data-content="#tooltipcontentBold" ></i> </a></li>
 				<li id="italic"><a href="#"><i id="italic" class="tooltip icon-italic" data-content="#tooltipcontentItalic"></i> </a></li>
 				<li id="underline"><a href="#"><i id="underline" class="tooltip icon-underline" data-content="#tooltipcontentUnder"></i> </a></li>
 			</ul>
 		</div> 
+			<!-- Tooltip Contents -->
 		
-			<!-- Tooltip Contents -->		
-			<div class="tooltip-content" id="tooltipcontentBold">
-			<p><strong><font color="white">Bold Text</font></strong></p></div>	
-			<div class="tooltip-content" id="tooltipcontentItalic">
-			<p><em><font color="white">Italicize Text</font></em></p></div>
-			<div class="tooltip-content" id="tooltipcontentUnder">
-			<p><u><font color="white">Underline Text</font></u></p></div>
-			<div class="tooltip-content" id="tooltipcontentFont">
-			<p><font color="white">Change Font</font></p></div>
-			<div class="tooltip-content" id="tooltipcontentEmoji">
-			<p><font color="white">Emojis!!</font></p></div>
-			<div class="tooltip-content" id="tooltipcontentFontSize">
-			<p><font color="white">Change Font Size</font></p></div>
-			<div class="tooltip-content" id="tooltipcontentAlignment">
-			<p><font color="white">Align Text</font></p></div>
-			
-			
+		<div class="tooltip-content" id="tooltipcontentBold">
+			<p>
+				<strong>
+					<font color="white">Bold Text</font>
+				</strong>
+			</p>
+		</div>	
+		<div class="tooltip-content" id="tooltipcontentItalic">
+			<p>
+				<em><font color="white">Italicize Text</font></em>
+			</p>
+		</div>
+		<div class="tooltip-content" id="tooltipcontentUnder">
+			<p>
+				<u><font color="white">Underline Text</font></u>
+			</p>
+		</div>
+		<div class="tooltip-content" id="tooltipcontentFont">
+			<p>
+				<font color="white">Change Font</font>
+			</p>
+		</div>
+		<div class="tooltip-content" id="tooltipcontentEmoji">
+			<p>
+				<font color="white">Emojis!!</font>
+			</p>
+		</div>
+		<div class="tooltip-content" id="tooltipcontentFontSize">
+			<p>
+				<font color="white">Change Font Size</font>
+			</p>
+		</div>
+		<div class="tooltip-content" id="tooltipcontentAlignment">
+			<p>
+				<font color="white">Align Text</font>
+			</p>
+		</div>
 		<div class="col_12" style="margin-top:0px; padding:0px">
-			<div id="chatbox" >chatbox</div>
+			<div id="chatbox"></div>
 		</div>
 		<div class="col_12">
 		<!-- Placeholder Text -->
-			<div id="textbox" contenteditable="true" unselectable="off">Click to begin writing...</div>
+			<div id="textbox"  contenteditable="true" unselectable="off">Click to begin writing...</div>
 			<form>
 				<input type="hidden" name="your_div_content" id="hidden_element" />
 			</form>
 		</div>
-
 	</div>
-	
-</div> <!-- End Grid -->
+</div> 
 
-<!-- Minimze and Maximize-->
-<script>
-		$("#minus").css('position', 'relative').click(function(){
-			if($("#base").css('bottom') == '-450px') {
-				$("#base").animate({'bottom': '0px'}, 1000);
-				$("#text-input").show("slow");
-			}
-			else {
-				$("#base").animate({'bottom': '-450px'}, 1000);
-				$("#text-input").hide("slow");			
-			}
-		});
+<script type="text/javascript">
+	$("#minus").css('position', 'relative').click(function(){
+		if($("#base").css('bottom') == '-450px') {
+			$("#base").animate({'bottom': '0px'}, 1000);
+			$("#text-input").show("slow");
+		}
+		else {
+			$("#base").animate({'bottom': '-450px'}, 1000);
+			$("#text-input").hide("slow");			
+		}
+	});
+	 
 </script>
+
 
 
 <script type="text/javascript">
 	$(function(){
 		 $('#textbox').focus();
-		 $( "#textbox" ).one( "click", function() {  //Function deleting the textbox writing at the beginning
+		 $( "#textbox" ).one( "click", function() {  //Function delete the textbox at the beginning
 			  $( "#textbox" ).empty();
 		  });
 		 
-		 $('#bold').click(function(){document.execCommand('bold', false, null);$('#textbox').focus();return false;});
-		 $('#italic').click(function(){document.execCommand('italic', false, null);$('#textbox').focus();return false;});
-		 $('#underline').click(function(){document.execCommand('underline', false, null);$('#textbox').focus();return false;});
+		 $('#bold').click(function(){
+			 document.execCommand('bold', false, null);
+			 $('#textbox').focus();
+			 return false;
+		 });
+		 $('#italic').click(function(){
+			 document.execCommand('italic', false, null);
+			 $('#textbox').focus();
+			 return false;
+		});
+		 $('#underline').click(function(){
+			 document.execCommand('underline', false, null);
+			 $('#textbox').focus();
+			 return false;
+		 });
 		 
 		 $('#font').on('change', function() {
 		  alert( this.value ); // or $(this).val()
 		  });
 		 
-		 $('#arial').click(function(){document.execCommand('fontName', false, "Arial");$('#textbox').focus();return false;});
-		 $('#courier').click(function(){document.execCommand('fontName', false, "Courier");$('#textbox').focus();return false;});
-		 $('#verdana').click(function(){document.execCommand('fontName', false, "Verdana");$('#textbox').focus();return false;});
-		 $('#roman').click(function(){document.execCommand('fontName', false, "Times New Roman");$('#textbox').focus();return false;});
-		 $('#comic_sans').click(function(){document.execCommand('fontName', false, "Comic Sans MS");$('#textbox').focus();return false;});
-		 
+		 $('#arial').click(function(){
+			 document.execCommand('fontName', false, "Arial");
+			 $('#textbox').focus();
+			 return false;
+		 });
+		 $('#courier').click(function(){
+			 document.execCommand('fontName', false, "Courier");
+			 $('#textbox').focus();
+			 return false;
+		 });
+		 $('#verdana').click(function(){
+			 document.execCommand('fontName', false, "Verdana");
+			 $('#textbox').focus();
+			 return false;
+		 });
+		 $('#roman').click(function(){
+			 document.execCommand('fontName', false, "Times New Roman");
+			 $('#textbox').focus();
+			 return false;
+		 });
+		 $('#comic_sans').click(function(){
+			document.execCommand('fontName', false, "Comic Sans MS");
+			$('#textbox').focus();
+			return false;
+		});
 		 
 		 $('#emoji_grid2').click(function(e){
 			var id = ($(e.target)).attr('class');
+			alert("id : " + id);
 			var gif = id.substring(0,3);
 			var gif_id = id.substring(4,id.length);
 			if (id !== undefined && !(gif=="gif") ) {
-				var string = '<img id="theImg" src="emojis/' + id + '.png" height="20" width="20" />'
-				$('#textbox').append(string);
-				$('#textbox').focus();
+				var image = '<img id="theImg" src="emojis/' + id + '.png" height="20" width="20" />';
+				$('#textbox').append(image);
+				//$('#textbox').focus();
+				elem = document.getElementById('textbox');
+				setEndOfContenteditable(elem);  //setting cursor at the end of textbox
 			} else {
 				if(gif_id=="fight" || gif_id=="exercise" ||gif_id=="cook"){
-			    var string = '<img id="theImg" src="emojis/' + gif_id + '.gif" height="60" width="60" />'
-				$('#textbox').append(string);
+			    var image = '<img id="theImg" src="emojis/' + gif_id + '.gif" height="60" width="60" />';
+				$('#textbox').append(image);
 				$('#textbox').focus();
                    } else {							   
-				   var string = '<img id="theImg" src="emojis/' + gif_id + '.gif" height="30" width="30" />'
-				   $('#textbox').append(string);
-				   $('#textbox').focus();			   
+				   var image = '<img id="theImg" src="emojis/' + gif_id + '.gif" height="30" width="30" />';
+				   $('#textbox').append(image);
+				   //$('#textbox').focus();	
+				   elem = document.getElementById('textbox');
+				   setEndOfContenteditable(elem); //setting cursor at the end of textbox
 				   }				
 			}
 			return false;
 		   });
 		   
-		 $('#Size1').click(function(){document.execCommand('fontSize', false, "1");$('#textbox').focus();return false;});
-		 $('#Size3').click(function(){document.execCommand('fontSize', false, "3");$('#textbox').focus();return false;});
-		 $('#Size5').click(function(){document.execCommand('fontSize', false, "5");$('#textbox').focus();return false;});
-		 $('#Size7').click(function(){document.execCommand('fontSize', false, "7");$('#textbox').focus();return false;});
-		 
-		
+		 $('#Size1').click(function(){
+				document.execCommand('fontSize', false, "1");
+				$('#textbox').focus();
+				return false;
+			});
+		 $('#Size3').click(function(){
+			 document.execCommand('fontSize', false, "3");
+			 $('#textbox').focus();
+			 return false;
+		});
+		 $('#Size5').click(function(){
+			 document.execCommand('fontSize', false, "5");
+			 $('#textbox').focus();
+			 return false;
+		});
+		 $('#Size7').click(function(){
+			 document.execCommand('fontSize', false, "7");
+			 $('#textbox').focus();
+			 return false;
+		});	
+	
+	
         <!-- Color Select Function   -->
 		$( "select" )     
 		  .change(function() {
@@ -339,15 +404,59 @@
 		 
 	});
 </script>
-	<script type="text/javascript">
+<script>
+<!-- Function to set cursor at the end of the textbox   -->
+function setEndOfContenteditable(contentEditableElement)
+{
+    var range,selection;
+    if(document.createRange)//Firefox, Chrome, Opera, Safari, IE 9+
+    {
+        range = document.createRange();//Create a range (a range is a like the selection but invisible)
+        range.selectNodeContents(contentEditableElement);//Select the entire contents of the element with the range
+        range.collapse(false);//collapse the range to the end point. false means collapse to end rather than the start
+        selection = window.getSelection();//get the selection object (allows you to change selection)
+        selection.removeAllRanges();//remove any selections already made
+        selection.addRange(range);//make the range you have just created the visible selection
+    }
+    else if(document.selection)//IE 8 and lower
+    { 
+        range = document.body.createTextRange();//Create a range (a range is a like the selection but invisible)
+        range.moveToElementText(contentEditableElement);//Select the entire contents of the element with the range
+        range.collapse(false);//collapse the range to the end point. false means collapse to end rather than the start
+        range.select();//Select the range (make it the visible selection
+    }
+}
+</script>
+	<script type ="text/javascript">
+
+		function getUserList() {
+			$.get('http://casino.curtiswendel.me:3000/api/getUser/', function (data) {
+				console.log(data);
+				$.each(data, function(i, user) {
+					$('#userList').append('<tr><td value='+user.ID+'>'+user.id+'</td><td value='+user.screenName+'>'+user.screenName+'</td></tr>');
+				});
+			});
+		}
+		function getUserInfo(userID) {
+			$.get('http://casino.curtiswendel.me:8080/api/getUser/'+userID, function (data) {
+				console.log('userdata: '+ data);
+				return data;
+			});
+		}
+		function getUrlParameter(sParam) {
+			var sPageURL = window.location.search.substring(1);
+			console.log("URl: "+sPageURL);
+			if (sPageURL.indexOf("&") != -1) {
+				var sURLVariables = sPageURL.split('&');
+				for (var i = 0; i < sURLVariables.length; i++) {
+					var sParameterName = sURLVariables[i].split('=');
+					if (sParameterName[0] == sParam) {
+						return sParameterName[1];
+					}
+				}
+			}
+		}
 		
-		/* Info provided by others */
-		var max_player = 5;
-		var user_name = "ctrinh";
-		var room = "poker";
-		var display_name="chuong trinh";
-		
-		/* ------------------------ */
 		
 		$('#yourform').submit(function(){
 			$('#hidden_element').val( /* ... set #hidden_element's value ... */
@@ -365,14 +474,46 @@
 			}
 		});
 		
+	</script>
+	<script type="text/javascript">
+
+		/* Default value */
+		var user_name = 'Anonymous'; 
+		var display_name = 'Anonymous';
+		var current_room = 'Main';
+		var login_time;
+
+		/* --------------*/
+		
+		var userID = getUrlParameter('userID');
+		var room = getUrlParameter('room');
+		
+		/* Account server error
+		
+		if (userID !== undefined || userID != ''){
+			user_name = getUserInfo(userID).email;
+			display_name = getUserInfo(userID).screenName;
+		} 
+		if (room !== undefined || room != '') {
+			current_room = room;
+		}
+		*/
+		$(document).ready(function() {
+			login_time = new Date().toISOString().slice(0, 19).replace('T', ' ');
+			console.log("login time " +login_time);
+			$('#topbar-name').html('<b>' +display_name +'</b>');
+			console.log(display_name);
+			console.log(current_room);
+			
+		});
+
 		function writeLogMsg() {
 			console.log("\nMessage is being sent: "+ $('#hidden_element').val());
-			//$('#chatbox').val($('#hidden_element').val());
 			$.ajax({
 				url:"chat_log.php",
 				dataType:'json',
 				type:"POST",
-				data: {mode: "write_msg", user_name: user_name, display_name:display_name, room: room, text:  $('#hidden_element').val()},
+				data: {mode: "write_msg", user_name: user_name, display_name:display_name, room: current_room, text:  $('#hidden_element').val()},
 				cache:false,
 				success: function(response_json) {
 					if (response_json['response'].error == true) {
@@ -386,12 +527,13 @@
 		}
 		function getLogMsg() {
 			var oldscrollHeight = $("#chatbox").attr("scrollHeight") - 20;
+			console.log(user_name +' - ' +display_name + ' - ' + current_room + ' - ' + login_time);
 			$.ajax({
 				url:"chat_log.php",
 				cache:false,
 				dataType: 'json',
 				type:"POST",
-				data: {mode: "get_msg", user_name: user_name, display_name:display_name, room: room},
+				data: {mode: "get_msg", user_name: user_name, display_name:display_name, room: current_room, login_time: login_time},
 				success: function(response_json) {
 					
 					if (response_json['response'].error == false) {
@@ -399,32 +541,37 @@
 						//console.log("\n results: "+ response_json['data']);
 						results = response_json;
 						//console.log("reponse: "+results['response']);
-						var len = results['data'].length;
-						var chat_name;	// either display_name (if available) or user_name (if display_name not exists)
-						var message_log = "<b><i>Welcome to " + room + " game</b></i>\n";
-						for (var i=0; i < len; i++) {
-							if (!results['data'][i].display_name || results['data'][i].display_name.length ===0) {
-								chat_name = results['data'][i].user_name;
-							} else {
-								chat_name = results['data'][i].display_name;
+						if (results['data']) {
+							var len = results['data'].length;
+							var chat_name;	// either display_name (if available) or user_name (if display_name not exists)
+							var message_log = '<div id="welcome"><i><h5>Welcome to '+current_room + ' room</h5></i></div>';
+							for (var i=0; i < len; i++) {
+								if (!results['data'][i].display_name || results['data'][i].display_name.length ===0) {
+									chat_name = results['data'][i].user_name;
+								} else {
+									chat_name = results['data'][i].display_name;
+								}
+								var color = "chat_style"+((chat_name.charCodeAt(0) * chat_name.length) % 10); // unique css style for each user
+								var align = "align"+ (chat_name.charCodeAt(0) * chat_name.length) % 2;
+								message_log += "<div class='mess_container'> <div class='avatar_wrapper "+align+"'><img src='emojis/blush.png' height='40' width='40'><div class='arrow "
+											+align+"'></div></div><div class='mess msg " + color + " "+align+"' style=\'text-align:left;\'><b>"
+											+ chat_name + "</b>" +"<span class='time'>" + results['data'][i].msg_time + "</span>" 
+											+ "<br/><p>" + results['data'][i].message + "</p></div></div>";
 							}
-							var color = "chat_style"+((chat_name.charCodeAt(0) * chat_name.length) % max_player);
-							message_log += "<div class='mess msg " + color + "' style=\'text-align:left;\'><b>" + chat_name + "</b>" +"<span class='time'>" + results['data'][i].msg_time + "</span>:" 
-							+ "<p  style='display:inline'>" + results['data'][i].message + "</p></div>";
-						}
-						//console.log(message_log);
-						if ($('#chatbox').html().length != message_log.length) {
-							//console.log($('#chatbox').html());
-							//console.log("\n--------\n"+ message_log);
-							$("#chatbox").html(message_log);
-							var newscrollHeight = $("#chatbox").attr("scrollHeight") - 20;
-						
-							if(newscrollHeight > oldscrollHeight){
-								$("#chatbox").animate({ scrollTop: newscrollHeight }, 'normal');
+							
+							if ($('#chatbox').html().length != message_log.length) {
+								//console.log($('#chatbox').html());
+								//console.log("\n--------\n"+ message_log);
+								$("#chatbox").html(message_log);
+								var newscrollHeight = $("#chatbox").attr("scrollHeight") - 20;
+							
+								if(newscrollHeight > oldscrollHeight){
+									$("#chatbox").animate({ scrollTop: newscrollHeight }, 'normal');
+								}
+								console.log("loading msg\n");
+							}   else {
+								console.log("not loading msg\n");
 							}
-							console.log("loading msg\n");
-						}   else {
-							console.log("not loading msg\n");
 						}
 					} else {
 						$("#chatbox").html("Server is temporarily down!");
@@ -432,21 +579,18 @@
 				}		
 			});
 		}
-		function getUserList() {
-			$.get('http://casino.curtiswendel.me:3000/api/getUser/', function(data) {
-				console.log(data);
-				$.each(data, function(i, user) {
-					$('#userList').append('<tr><td value='+user.ID+'>'+user.id+'</td><td value='+user.screenName+'>'+user.screenName+'</td></tr>');
-				});
-			});
-		}
+
 		$(document).ready(function() {
 			getUserList();
+			getLogMsg();
 			var check_msg = setInterval(function() {
 				getLogMsg();
 
-			},5000);
+			},4000);			
 		});
+		function animation() {
+			$('#welcome').animate({ width: '600px' }, 3000).animate({ width: '100px' }, 3000).fadeOut('slow');			
+		}
 	</script>
 
 </body>
