@@ -113,9 +113,17 @@
 									<td class="gif_whew"><img class="gif_whew" src="emojis/whew.gif" alt="Smiley face" height="50" width="50"></td>
 									<td class="gif_cheer"><img class="gif_cheer" src="emojis/cheer.gif" alt="Smiley face" height="50" width="50"></td>
 									<td class="gif_search"><img class="gif_search" src="emojis/search.gif" alt="Smiley face" height="50" width="50"></td>
-									<td class="soccer"><img class="soccer" src="emojis/soccer.png" alt="Smiley face" height="50" width="50"></td>
-									<td class="football"><img class="football" src="emojis/football.png" alt="Smiley face" height="50" width="50"></td>
-									<td class="video_game"><img class="video_game" src="emojis/video_game.png" alt="Smiley face" height="50" width="50"></td>
+									<td class="gif_cupid3"><img class="gif_cupid3" src="emojis/cupid3.gif" alt="Smiley face" height="50" width="50"></td>
+									<td class="gif_pikachu"><img class="gif_pikachu" src="emojis/pikachu.gif" alt="Smiley face" height="50" width="50"></td>
+									<td class="gif_pokemon"><img class="gif_pokemon" src="emojis/pokemon.gif" alt="Smiley face" height="50" width="50"></td>
+								</tr><tr>
+									<td class="gif_chikarita"><img class="gif_chikarita" src="emojis/chikarita.gif" alt="Smiley face" height="50" width="50"></td>
+									<td class="gif_sandshrew"><img class="gif_sandshrew" src="emojis/sandshrew.gif" alt="Smiley face" height="50" width="50"></td>
+									<td class="gif_pokemon2"><img class="gif_pokemon2" src="emojis/pokemon2.gif" alt="Smiley face" height="50" width="50"></td>
+									<td class="gif_wave"><img class="gif_wave" src="emojis/wave.gif" alt="Smiley face" height="50" width="50"></td>
+									<td class="gif_whew"><img class="gif_whew" src="emojis/whew.gif" alt="Smiley face" height="50" width="50"></td>
+									<td class="gif_cheer"><img class="gif_cheer" src="emojis/cheer.gif" alt="Smiley face" height="50" width="50"></td>
+									<td class="gif_search"><img class="gif_search" src="emojis/search.gif" alt="Smiley face" height="50" width="50"></td>
 								</tr><tr>
 									<td class="birthday"><img class="birthday" src="emojis/birthday.png" alt="Smiley face" height="50" width="50"></td>
 									<td class="broken_heart"><img class="broken_heart" src="emojis/broken_heart.png" alt="Smiley face" height="50" width="50"></td>
@@ -211,7 +219,7 @@
 					<option value="22" id="#E77471" style="background-color:#E77471;"></option> <!-- Light Coral -->	
 					<option value="24" id="#FFFFFF" style="background-color:#FFFFFF;"></option><!-- White -->	
 				</select>
-				<li id="bold"><a href="#" class="readmore"><i id="bold" class="tooltip icon-bold" data-content="#tooltipcontentBold" ></i> </a></li>
+				<li id="bold"><a href="#"><i id="bold" class="tooltip icon-bold" data-content="#tooltipcontentBold" ></i> </a></li>
 				<li id="italic"><a href="#"><i id="italic" class="tooltip icon-italic" data-content="#tooltipcontentItalic"></i> </a></li>
 				<li id="underline"><a href="#"><i id="underline" class="tooltip icon-underline" data-content="#tooltipcontentUnder"></i> </a></li>
 			</ul>
@@ -282,8 +290,6 @@
 	 
 </script>
 
-
-
 <script type="text/javascript">
 <!--Globals variables needed to keep font style   -->
 var boldClicked = false;
@@ -310,17 +316,31 @@ var color_change = false;
 		 $( "#textbox" ).one( "click", function() {  //Function delete the textbox at the beginning
 			  $( "#textbox" ).empty();
 		  });
+		  
 		 
 		 $('#bold').click(function(){
 			if(!boldClicked){
 				 document.execCommand('bold', false, null);
 				 $('#textbox').focus();
 				 boldClicked = true;
+				 var styles = {
+				     border:"2px solid #DEB821",
+					 backgroundColor : "#FFD700"
+					};
+				 //$('#bold').css("background-color","#DEB821");				 
+				 $('#bold').css("border-radius","7px");
+				 $('#bold').css(styles);
 				 return false;
 			 } else {
 			    document.execCommand('bold', false, null);
 				 $('#textbox').focus();
 				 boldClicked = false;
+				 var styles = {
+				     border:"",
+					 backgroundColor : ""
+					}; 
+				 $('#bold').css(styles);
+				 $('#bold').css("border-radius","");
 				 return false;
 			 }
 		 });
@@ -329,10 +349,24 @@ var color_change = false;
 				 document.execCommand('italic', false, null);
 				 $('#textbox').focus();
 				 italicClicked = true;
+				 var styles = {
+				     border:"2px solid #DEB821",
+					 backgroundColor : "#FFD700"
+					};
+				 //$('#bold').css("background-color","#DEB821");				 
+				 $('#italic').css("border-radius","7px");
+				 $('#italic').css(styles);
 				 return false;
 				 } else {
 				 document.execCommand('italic', false, null);
 				 $('#textbox').focus();
+				 var styles = {
+				     border:"",
+					 backgroundColor : ""
+					};
+				 //$('#bold').css("background-color","#DEB821");				 
+				 $('#italic').css("border-radius","");
+				 $('#italic').css(styles);
 				 italicClicked = false;
 				 return false;
 			 }
@@ -343,10 +377,24 @@ var color_change = false;
 				 document.execCommand('underline', false, null);
 				 $('#textbox').focus();
 				 underlineClicked = true;
+				 var styles = {
+				     border:"2px solid #DEB821",
+					 backgroundColor : "#FFD700"
+					};
+				 //$('#bold').css("background-color","#DEB821");				 
+				 $('#underline').css("border-radius","7px");
+				 $('#underline').css(styles);
 				 return false;
 			 } else {
 			     document.execCommand('underline', false, null);
 				 $('#textbox').focus();
+				 var styles = {
+				     border:"",
+					 backgroundColor : ""
+					};
+				 //$('#bold').css("background-color","#DEB821");				 
+				 $('#underline').css("border-radius","");
+				 $('#underline').css(styles);
 				 underlineClicked = false;
 				 return false;
 			 }
@@ -428,22 +476,30 @@ var color_change = false;
 			var gif = id.substring(0,3);
 			var gif_id = id.substring(4,id.length);
 			if (id !== undefined && !(gif=="gif") ) {
-				var image = '<img id="theImg" src="emojis/' + id + '.png" height="20" width="20" />';
+				var image = '<img id="theImg" src="emojis/' + id + '.png" height="25" width="25" />';
 				$('#textbox').append(image);
 				//$('#textbox').focus();
 				elem = document.getElementById('textbox');
 				setEndOfContenteditable(elem);  //setting cursor at the end of textbox
 			} else {
-				if(gif_id=="fight" || gif_id=="exercise" ||gif_id=="cook"){
-			    var image = '<img id="theImg" src="emojis/' + gif_id + '.gif" height="60" width="60" />';
+				if(gif_id=="fight"){
+			    var image = '<img id="theImg" src="emojis/' + gif_id + '.gif" height="95" width="95" />';
 				$('#textbox').append(image);
-				$('#textbox').focus();
-                   } else {							   
-				   var image = '<img id="theImg" src="emojis/' + gif_id + '.gif" height="30" width="30" />';
-				   $('#textbox').append(image);
+				//$('#textbox').focus();
+				elem = document.getElementById('textbox');
+				setEndOfContenteditable(elem); //setting cursor at the end of textbox
+                   } else if(gif_id=="exercise" ||gif_id=="cook") {							   
+				   var image = '<img id="theImg" src="emojis/' + gif_id + '.gif" height="60" width="60" />';
+				$('#textbox').append(image);
 				   //$('#textbox').focus();	
 				   elem = document.getElementById('textbox');
 				   setEndOfContenteditable(elem); //setting cursor at the end of textbox
+				   } else {
+				   var image = '<img id="theImg" src="emojis/' + gif_id + '.gif" height="35" width="35" />';
+				   $('#textbox').append(image);
+				   //$('#textbox').focus();	
+				   elem = document.getElementById('textbox');
+				   setEndOfContenteditable(elem); //setting cursor at the end of textbox				   
 				   }				
 			}
 			return false;
