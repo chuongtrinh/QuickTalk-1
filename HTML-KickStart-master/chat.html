@@ -285,6 +285,26 @@
 
 
 <script type="text/javascript">
+<!--Globals variables needed to keep font style   -->
+var boldClicked = false;
+var italicClicked = false;
+var underlineClicked = false;
+
+var arialClicked = false;
+var courierClicked = false;
+var verdanaClicked = false;
+var romanClicked = false;
+var comic_sansClicked = false;
+
+var Size1Clicked = false;
+var Size3Clicked = false;
+var Size5Clicked = false;
+var Size7Clicked = false;
+
+var color_change = false;
+
+
+
 	$(function(){
 		 $('#textbox').focus();
 		 $( "#textbox" ).one( "click", function() {  //Function delete the textbox at the beginning
@@ -292,19 +312,44 @@
 		  });
 		 
 		 $('#bold').click(function(){
-			 document.execCommand('bold', false, null);
-			 $('#textbox').focus();
-			 return false;
+			if(!boldClicked){
+				 document.execCommand('bold', false, null);
+				 $('#textbox').focus();
+				 boldClicked = true;
+				 return false;
+			 } else {
+			    document.execCommand('bold', false, null);
+				 $('#textbox').focus();
+				 boldClicked = false;
+				 return false;
+			 }
 		 });
 		 $('#italic').click(function(){
-			 document.execCommand('italic', false, null);
-			 $('#textbox').focus();
-			 return false;
+			 if(!italicClicked){
+				 document.execCommand('italic', false, null);
+				 $('#textbox').focus();
+				 italicClicked = true;
+				 return false;
+				 } else {
+				 document.execCommand('italic', false, null);
+				 $('#textbox').focus();
+				 italicClicked = false;
+				 return false;
+			 }
+			 
 		});
 		 $('#underline').click(function(){
-			 document.execCommand('underline', false, null);
-			 $('#textbox').focus();
-			 return false;
+			if(!underlineClicked){
+				 document.execCommand('underline', false, null);
+				 $('#textbox').focus();
+				 underlineClicked = true;
+				 return false;
+			 } else {
+			     document.execCommand('underline', false, null);
+				 $('#textbox').focus();
+				 underlineClicked = false;
+				 return false;
+			 }
 		 });
 		 
 		 $('#font').on('change', function() {
@@ -312,29 +357,69 @@
 		  });
 		 
 		 $('#arial').click(function(){
-			 document.execCommand('fontName', false, "Arial");
-			 $('#textbox').focus();
-			 return false;
+			if(!arialClicked){
+				 document.execCommand('fontName', false, "Arial");
+				 $('#textbox').focus();
+				 arialClicked = true;
+				 return false;
+			 } else {
+			 	 document.execCommand('fontName', false, "Arial");
+				 $('#textbox').focus();
+				 arialClicked = false;
+				 return false;
+			 }
 		 });
 		 $('#courier').click(function(){
-			 document.execCommand('fontName', false, "Courier");
-			 $('#textbox').focus();
-			 return false;
+			if(!courierClicked){
+				 document.execCommand('fontName', false, "Courier");
+				 $('#textbox').focus();
+				 courierClicked = true;
+				 return false;
+			 } else {
+			 	 document.execCommand('fontName', false, "Courier");
+				 $('#textbox').focus();
+				 courierClicked = false;
+				 return false;
+			 }
 		 });
 		 $('#verdana').click(function(){
-			 document.execCommand('fontName', false, "Verdana");
-			 $('#textbox').focus();
-			 return false;
+		    if(!verdanaClicked){
+				 document.execCommand('fontName', false, "Verdana");
+				 $('#textbox').focus();
+				 verdanaClicked = true;
+				 return false;
+			 } else {
+			     document.execCommand('fontName', false, "Verdana");
+				 $('#textbox').focus();
+				 verdanaClicked = false;
+				 return false;
+			 }
 		 });
 		 $('#roman').click(function(){
-			 document.execCommand('fontName', false, "Times New Roman");
-			 $('#textbox').focus();
-			 return false;
+		    if(!romanClicked){
+				 document.execCommand('fontName', false, "Times New Roman");
+				 $('#textbox').focus();
+				 romanClicked = true;
+				 return false;
+			 } else {
+				 document.execCommand('fontName', false, "Times New Roman");
+				 $('#textbox').focus();
+				 romanClicked = false;
+				 return false;
+			 }
 		 });
 		 $('#comic_sans').click(function(){
-			document.execCommand('fontName', false, "Comic Sans MS");
-			$('#textbox').focus();
-			return false;
+			if(!comic_sansClicked){
+				document.execCommand('fontName', false, "Comic Sans MS");
+				$('#textbox').focus();
+				comic_sansClicked = true;
+				return false;
+			} else {
+				document.execCommand('fontName', false, "Comic Sans MS");
+				$('#textbox').focus();
+				comic_sansClicked = false;
+				return false;
+			}
 		});
 		 
 		 $('#emoji_grid2').click(function(e){
@@ -365,24 +450,56 @@
 		   });
 		   
 		 $('#Size1').click(function(){
+			if(!Size1Clicked){
 				document.execCommand('fontSize', false, "1");
 				$('#textbox').focus();
+				Size1Clicked = true;
 				return false;
+				} else {
+				document.execCommand('fontSize', false, "1");
+				$('#textbox').focus();
+				Size1Clicked = false;
+				return false;
+				}
 			});
 		 $('#Size3').click(function(){
-			 document.execCommand('fontSize', false, "3");
-			 $('#textbox').focus();
-			 return false;
+			if(!Size3Clicked){
+				 document.execCommand('fontSize', false, "3");
+				 $('#textbox').focus();
+				 Size3Clicked = true;
+				 return false;
+			 } else {
+			 	document.execCommand('fontSize', false, "3");
+				 $('#textbox').focus();
+				 Size3Clicked = false;
+				 return false;
+			 }
 		});
 		 $('#Size5').click(function(){
-			 document.execCommand('fontSize', false, "5");
-			 $('#textbox').focus();
-			 return false;
+			if(!Size5Clicked){
+				 document.execCommand('fontSize', false, "5");
+				 $('#textbox').focus();
+				 Size5Clicked = true;
+				 return false;
+			 } else {
+			 	document.execCommand('fontSize', false, "5");
+				 $('#textbox').focus();
+				 Size5Clicked = false;
+				 return false;
+				}
 		});
 		 $('#Size7').click(function(){
-			 document.execCommand('fontSize', false, "7");
-			 $('#textbox').focus();
-			 return false;
+			if(!Size7Clicked){
+				 document.execCommand('fontSize', false, "7");
+				 $('#textbox').focus();
+				 Size7Clicked = true;
+				 return false;
+			 } else {
+			 	 document.execCommand('fontSize', false, "7");
+				 $('#textbox').focus();
+				 Size7Clicked = false;
+				 return false;
+			 }
 		});	
 	
 	
@@ -397,6 +514,8 @@
 			});
 			//$( "#samplediv").text( str );
 			document.execCommand('foreColor', false, id);
+			color_change = true;
+
 			$("select").css("background-color",id);
 			$('#textbox').focus();
 		  })
@@ -471,6 +590,47 @@ function setEndOfContenteditable(contentEditableElement)
 				writeLogMsg();
 				alert("loaded :" + $('#hidden_element').val());
 				$("#textbox").empty();
+				
+				<!--Will keep the format changes  -->
+				if(boldClicked){
+			 document.execCommand('bold', false, null);
+			    }
+				if(italicClicked){
+			 document.execCommand('italic', false, null);
+			    }
+				if(underlineClicked){
+			 document.execCommand('underline', false, null);
+			    }
+				if(arialClicked){
+			 document.execCommand('fontName', false, "Arial");
+			    }
+				if(courierClicked){
+			 document.execCommand('fontName', false, "Courier");
+			    }
+				if(verdanaClicked){
+			 document.execCommand('fontName', false, "Verdana");
+			    }
+				if(romanClicked){
+			 document.execCommand('fontName', false, "Times New Roman");
+			    }
+				if(comic_sansClicked){
+			 document.execCommand('fontName', false, "Comic Sans MS");
+			    }
+				if(Size1Clicked){
+			 document.execCommand('fontSize', false, "1");
+			    }
+				if(Size3Clicked){
+			 document.execCommand('fontSize', false, "3");
+			    }
+				if(Size5Clicked){
+			 document.execCommand('fontSize', false, "5");
+			    }
+				if(Size7Clicked){
+			 document.execCommand('fontSize', false, "7");
+			    }
+				if(color_change){
+			 document.execCommand('foreColor', false, id);
+			    }
 			}
 		});
 		
